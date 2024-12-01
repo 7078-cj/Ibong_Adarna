@@ -9,11 +9,11 @@ function Register() {
     password: '',
   });
 
-  // Handle form submission
+  
   const submit = (e) => {
       e.preventDefault();
 
-      // Post the form data to a Laravel route
+      
       post('/register-user');
   };
 

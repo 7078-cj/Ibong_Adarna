@@ -39,6 +39,12 @@ Route::middleware('auth')->group(function (){
         return inertia('LeaderBoards',['user'=>$user]);
     });
 
+    Route::get('/chapter1', function () {
+        $user = auth()->guard('web')->user();
+
+        return inertia('Chapter1',['user'=>$user]);
+    });
+
 
 
     
