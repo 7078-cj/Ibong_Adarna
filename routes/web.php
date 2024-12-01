@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/chapter1', function () {
         $user = auth()->guard('web')->user();
 
-        return inertia('Chapter1',['user'=>$user]);
+        return inertia('Chapters/Chapter1/Chapter1',['user'=>$user]);
     });
     Route::get('/profile', function () {
         $user = auth()->guard('web')->user();

@@ -22,6 +22,8 @@ function ChapterPage({user}) {
     };
   
     return (
+        <>
+        <NavBar user={user}/>
       <div className="bg-cover bg-center bg-no-repeat h-screen font-pixelify-sans font-bold flex flex-col justify-center items-center gap-20" style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className='flex flex-row gap-6'>
           {paginatedChapters.map((chapterNumber) => (
@@ -43,6 +45,7 @@ function ChapterPage({user}) {
           disabled={currentPage === totalPages} onClick={() => handlePageChange(currentPage + 1)}>Next</button>
         </div>
       </div>
+      </>
     );
 }
 

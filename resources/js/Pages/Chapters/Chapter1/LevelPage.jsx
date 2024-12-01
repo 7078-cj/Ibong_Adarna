@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import backgroundImage from '../../assets/lvlpageBG2.gif'
-import chapterBtn from '../../assets/tile1.png'
-import NavBar from '../../components/Navbar'
-import MultipleChoice from '../../questions/MultipleChoice'
-import FIB from '../../questions/FIB'
-import FourPicsWord from '../../questions/FourPicsWord'
+
+
+import NavBar from '../../../components/Navbar'
+import MultipleChoice from '../../../questions/MultipleChoice'
+import FIB from '../../../questions/FIB'
+import FourPicsWord from '../../../questions/FourPicsWord'
 
 function LevelPage({user}) {
   const [mcIsCorrect, setMcIsCorrect] = useState(false);

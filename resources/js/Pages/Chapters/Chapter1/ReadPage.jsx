@@ -1,7 +1,7 @@
 import React from 'react'
 
-import backgroundImage from '../../assets/readpageBG.gif'
-import scroll from '../../assets/ReadScroll.png'
+
+import scroll from '../../../assets/ReadScroll.png'
 
 function ReadPage() {
   return (
