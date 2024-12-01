@@ -44,6 +44,11 @@ Route::middleware('auth')->group(function (){
 
         return inertia('Chapter1',['user'=>$user]);
     });
+    Route::get('/profile', function () {
+        $user = auth()->guard('web')->user();
+
+        return inertia('ProfilePage',['user'=>$user]);
+    });
 
 
 
