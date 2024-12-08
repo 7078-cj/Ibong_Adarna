@@ -10,12 +10,12 @@ function MultipleChoice({ question, answer, choices,onCorrect }) {
   };
 
   const handleSubmit = () => {
-    if (selectedChoice) {
+    if (selectedChoice == answer) {
       setIsCorrect(selectedChoice === answer);
       onCorrect(selectedChoice === answer)
-      setSubmitted(true);
+      
     } else {
-      alert('Please select an answer!');
+      alert('wrong answer!');
     }
   };
 
@@ -31,7 +31,7 @@ function MultipleChoice({ question, answer, choices,onCorrect }) {
                 name="multipleChoice"
                 value={choice}
                 onChange={() => handleChoiceChange(choice)}
-                disabled={submitted} // Disable input after submission
+                
               />
               {choice}
             </label>
@@ -43,11 +43,7 @@ function MultipleChoice({ question, answer, choices,onCorrect }) {
           Submit
         </button>
       )}
-      {submitted && (
-        <div style={{ marginTop: '10px', fontWeight: 'bold' }}>
-          {isCorrect ? 'Correct!' : `Incorrect. The correct answer is "${answer}".`}
-        </div>
-      )}
+      
     </div>
   );
 }

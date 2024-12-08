@@ -3,13 +3,13 @@ import LevelPage from './LevelPage'
 import ReadPage from './ReadPage'
 import Navbar from '../../components/Navbar'
 
-function Chapter({user, fibQestion, fibAnswer ,mcQuestion ,mcChoices ,mcAnswer ,fourPics ,fourPicsAnswer ,summary}) {
+function Chapter({user, fibQestion, fibAnswer ,mcQuestion ,mcChoices ,mcAnswer ,fourPics ,fourPicsAnswer ,summary,num}) {
   const [read , setRead] = useState(false)
   console.log(read)
 
   return (
     <>
-    <Navbar user={user}/>
+    
     <div className=''>
         {read ?   <LevelPage user={user}
                              fibQestion={fibQestion}
@@ -19,6 +19,9 @@ function Chapter({user, fibQestion, fibAnswer ,mcQuestion ,mcChoices ,mcAnswer ,
                              mcAnswer={mcAnswer}
                              fourPics={fourPics}
                              fourPicsAnswer={fourPicsAnswer}
+                             num={num}
+                             
+                            
                              />:<ReadPage onRead={setRead}
                                 summary={summary}/>}
        

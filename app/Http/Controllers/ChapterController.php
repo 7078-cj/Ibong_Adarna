@@ -19,7 +19,7 @@ class ChapterController extends Controller
 
         $viewName = "Chapters/Chapter{$num}";
 
-        return inertia($viewName,['user'=>$user]);
+        return inertia($viewName,['user'=>$user,'num'=>$num ]);
 
     }
 }

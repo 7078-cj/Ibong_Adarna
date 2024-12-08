@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../components/Navbar'
 import backgroundImage from '../assets/backgroundImage.gif'
+import WordBank from '../questions/WordBank'
 
 function HeroPage({user}) {
     console.log(user)
@@ -23,6 +24,7 @@ function HeroPage({user}) {
                     </button>
                 </a>
             </div>
+            <WordBank/>
         </header>
         
         

@@ -1,7 +1,7 @@
 import React from 'react'
 import Chapter from '../ChapterComponent/Chapter'
 
-function Chapter2({user}) {
+function Chapter2({user,num}) {
   return (
     <div>
          <Chapter
