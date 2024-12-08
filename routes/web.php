@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::get('/login', function () {
@@ -27,11 +29,7 @@ Route::middleware('auth')->group(function (){
         return inertia('HeroPage',['user'=>$user]);
     });
 
-    Route::get('/chapters', function () {
-        $user = auth()->guard('web')->user();
-
-        return inertia('ChapterPage',['user'=>$user]);
-    });
+    Route::get('/chapters', [ChapterController::class, 'showChapters']);
 
     Route::get('/leaderboard', function () {
         $user = auth()->guard('web')->user();
@@ -39,11 +37,8 @@ Route::middleware('auth')->group(function (){
         return inertia('LeaderBoards',['user'=>$user]);
     });
 
-    Route::get('/chapter1', function () {
-        $user = auth()->guard('web')->user();
-
-        return inertia('Chapters/Chapter1/Chapter1',['user'=>$user]);
-    });
+    Route::get('/chapter/{num}', [ChapterController::class, 'showChapter']);
+    
     Route::get('/profile', function () {
         $user = auth()->guard('web')->user();
 

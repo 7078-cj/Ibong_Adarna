@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
 
-import NavBar from '../../../components/Navbar'
-import MultipleChoice from '../../../questions/MultipleChoice'
-import FIB from '../../../questions/FIB'
-import FourPicsWord from '../../../questions/FourPicsWord'
+import NavBar from '../../components/Navbar'
+import MultipleChoice from '../../questions/MultipleChoice'
+import FIB from '../../questions/FIB'
+import FourPicsWord from '../../questions/FourPicsWord'
 
-function LevelPage({user}) {
+function LevelPage({user,fibQestion,fibAnswer,mcQuestion,mcChoices=[],mcAnswer,fourPics=[],fourPicsAnswer}) {
   const [mcIsCorrect, setMcIsCorrect] = useState(false);
   const [fibIsCorrect, setFibIsCorrect] = useState(false);
   const [fourPicsWordIsCorrect, setFourPicsWordIsCorrect] = useState(false);
@@ -37,18 +37,18 @@ function LevelPage({user}) {
     <div className="bg-cover bg-center bg-no-repeat h-screen font-pixelify-sans font-bold flex flex-col justify-center items-center gap-20" >
       
     <MultipleChoice 
-      question={'Saan naganap ang kwento?'} 
-      answer={'Berbanya'} 
-      choices={['Albania',' Kardavia','Berbanya','Dystopia']}
+      question={mcQuestion} 
+      answer={mcAnswer} 
+      choices={mcChoices}
       onCorrect={handleMcCorrect}
       />
 
-    <FIB  question="The capital of France is _____."
-        answer="Paris"
+    <FIB  question={fibQestion}
+        answer={fibAnswer}
         onCorrect={handleFibCorrect}/>
 
-    <FourPicsWord pictures={pictures}
-     answer={correctAnswer}
+    <FourPicsWord pictures={fourPics}
+     answer={fourPicsAnswer}
      onCorrect={setFourPicsWordIsCorrect} />
     
     {allCorrect ? <h1>all are correct</h1>:<></>}
