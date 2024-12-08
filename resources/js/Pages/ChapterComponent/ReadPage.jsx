@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 
 
 import scroll from '../../assets/ReadScroll.png'
+import Navbar from '../../components/Navbar'
 
-function ReadPage({onRead,summary}) {
+function ReadPage({onRead,summary,user}) {
   
 
   return (
     <>
+    <Navbar user={user}/>
     <div className="bg-cover bg-center bg-no-repeat h-screen font-pixelify-sans font-bold flex flex-row justify-center items-center p-20">
         <div>
             <img className='h-screen w-[1100px]'src={scroll}></img>

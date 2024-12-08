@@ -23,7 +23,8 @@ function Chapter({user, fibQestion, fibAnswer ,mcQuestion ,mcChoices ,mcAnswer ,
                              
                             
                              />:<ReadPage onRead={setRead}
-                                summary={summary}/>}
+                                summary={summary}
+                                user={user}/>}
        
         
     </div>
