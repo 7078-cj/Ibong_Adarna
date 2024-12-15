@@ -1,6 +1,11 @@
 import React from 'react'
 import Chapter from '../ChapterComponent/Chapter'
 
+import image1 from '../../assets/chapterImage/chapter16/1.jpg'
+import image2 from '../../assets/chapterImage/chapter16/2.jpg'
+import image3 from '../../assets/chapterImage/chapter16/3.jpg'
+import image4 from '../../assets/chapterImage/chapter16/4.jpg'
+
 function Chapter16({user,num}) {
   return (
     <div>
@@ -11,10 +16,7 @@ function Chapter16({user,num}) {
         mcQuestion={'Ano ang likas na katangian ng kabundukan ng Armenya?'}
         mcChoices={['Maraming disyertong lugar','Paraíso sa kagandahan na may maraming hayop at pananim','Isang lugar na puno ng yelo','Isang lugar na madilim at mapanganib']}
         mcAnswer={'Paraíso sa kagandahan na may maraming hayop at pananim'}
-        fourPics={['https://i.pinimg.com/736x/02/59/69/0259699a168aea21ba838cd4873a1fdc.jpg', 
-         'https://i.pinimg.com/236x/3f/6c/89/3f6c89b7e2123f425cd28f0d3bfb6703.jpg',
-         'https://i.pinimg.com/236x/ff/09/60/ff0960335eb979efec40804abadfea71.jpg',
-         'https://i.pinimg.com/236x/d3/dd/ad/d3ddad2729916d771e839f3a14dc094e.jpg',]}
+        fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'kabundukan'}
         summary={'asdadadsasd 2222222'}
 

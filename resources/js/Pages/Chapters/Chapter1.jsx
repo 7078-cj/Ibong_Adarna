@@ -1,8 +1,12 @@
 import React from 'react'
 import Chapter from '../ChapterComponent/Chapter'
 
-function Chapter1({user,num}) {
+import image1 from '../../assets/chapterImage/chapter1/1.jpg'
+import image2 from '../../assets/chapterImage/chapter1/2.jpg'
+import image3 from '../../assets/chapterImage/chapter1/3.jpg'
+import image4 from '../../assets/chapterImage/chapter1/4.jpg'
 
+function Chapter1({user,num}) {
     console.log(num)
 
   return (
@@ -14,10 +18,7 @@ function Chapter1({user,num}) {
         mcQuestion={'Siya ang paboritong anak ni Don Fernando.'}
         mcChoices={['Don Pedro','Don Diego','Don Juan','Don Kier']}
         mcAnswer={'Don Juan'}
-        fourPics={['https://i.pinimg.com/736x/45/5a/94/455a949cdf29139dfbf974e6b8a5bc60.jpg', 
-         'https://i.pinimg.com/736x/19/12/25/191225aab465df1ed84c3203acc0ed8b.jpg',
-         'https://i.pinimg.com/736x/3b/f8/26/3bf826d15ceb64dfc9d3712f5a451838.jpg',
-         'https://i.pinimg.com/736x/7f/bb/6c/7fbb6c65a94568d76d271c6c15b12e6e.jpg',]}
+        fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'Kaharian'}
 
         words={[

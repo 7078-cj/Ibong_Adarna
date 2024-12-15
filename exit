@@ -1,0 +1,65 @@
+[33mcommit db672be33d4146082b4932037008ddb83748989b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Jon <aljonkenfernandez36@gmail.com>
+Date:   Sun Dec 15 20:49:39 2024 +0800
+
+    initial chapter1-20
+
+[33mcommit af6d9da440427886eeb709b28c1797c1f0b7b689[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Ceejay Santos <7078ceejay@gmail.com>
+Date:   Sun Dec 8 14:02:58 2024 +0800
+
+    minorfix
+
+[33mcommit fc8fcacbd53b42cfed2b5497024461554477efa4[m
+Author: Ceejay Santos <7078ceejay@gmail.com>
+Date:   Sun Dec 8 13:57:07 2024 +0800
+
+    w/ question pagination ,wordbank
+
+[33mcommit 0401c0896ea2b8e798727e11a4fce8634b2c2537[m
+Author: Ceejay Santos <7078ceejay@gmail.com>
+Date:   Sun Dec 8 13:13:35 2024 +0800
+
+    madaling paglagay ng chapter
+
+[33mcommit 070967a40d006b6f3f5aace86f381f22d93d939c[m
+Author: Ceejay Santos <7078ceejay@gmail.com>
+Date:   Sun Dec 1 18:19:27 2024 +0800
+
+    minor fix
+
+[33mcommit 0664aeef45c2284e63c33599f8be9df8534b563d[m
+Author: Ceejay Santos <7078ceejay@gmail.com>
+Date:   Sun Dec 1 18:08:44 2024 +0800
+
+    w/ chapterPagination
+
+[33mcommit 39ffdd1ecd9292fa00886573dbc39cceb5912116[m
+Author: Ceejay Santos <7078ceejay@gmail.com>
+Date:   Sun Dec 1 18:00:51 2024 +0800
+
+    w/ profile
+
+[33mcommit 458ebbbf3f720de923020b107ef050af9d4ac5d0[m
+Author: Ceejay Santos <7078ceejay@gmail.com>
+Date:   Sun Dec 1 17:41:32 2024 +0800
+
+    w/ question variations
+
+[33mcommit a7471333b9df35933afa6857e73ffdd2b87ff3b9[m
+Author: Ceejay Santos <7078ceejay@gmail.com>
+Date:   Wed Nov 20 21:19:25 2024 +0800
+
+    w/ login and register and other pages
+
+[33mcommit f4c120436ce20a803176fde8b08512a03f7d69f0[m
+Author: Ceejay Santos <7078ceejay@gmail.com>
+Date:   Mon Nov 18 15:00:44 2024 +0800
+
+    with modules and dependedncies
+
+[33mcommit 5b1a6418bfb95df24c78ed9c959e8bde186a2124[m
+Author: Ceejay Santos <7078ceejay@gmail.com>
+Date:   Mon Nov 18 14:58:04 2024 +0800
+
+    first commit

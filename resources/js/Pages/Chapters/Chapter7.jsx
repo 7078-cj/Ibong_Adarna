@@ -1,6 +1,11 @@
 import React from 'react'
 import Chapter from '../ChapterComponent/Chapter'
 
+import image1 from '../../assets/chapterImage/chapter7/1.jpg'
+import image2 from '../../assets/chapterImage/chapter7/2.jpg'
+import image3 from '../../assets/chapterImage/chapter7/3.jpg'
+import image4 from '../../assets/chapterImage/chapter7/4.jpg'
+
 function Chapter6({user,num}) {
   return (
     <div>
@@ -11,11 +16,8 @@ function Chapter6({user,num}) {
         mcQuestion={' Ano ang ginawa ni Don Juan upang manatiling gising habang umaawit ang Ibong Adarna?'}
         mcChoices={['Uminom ng tubig','Hinati ang kanyang palad','Kumain ng prutas','Nagdasal']}
         mcAnswer={'Hinati ang kanyang palad'}
-        fourPics={['https://i.pinimg.com/236x/66/4a/be/664abe983aaa33aec6d66da3dfc66a0b.jpg', 
-         'https://i.pinimg.com/236x/47/e3/5a/47e35ad7430b6b7dd520aa2252abd90d.jpg',
-         'https://i.pinimg.com/736x/9e/34/80/9e34804ec4c7c05d5568217b5650c1ac.jpg',
-         'https://i.pinimg.com/736x/c5/44/4c/c5444c315a2bdc680a317f1310b768c1.jpg',]}
-        fourPicsAnswer={'paghuli'}
+        fourPics={[image1, image2, image3, image4,]}
+        fourPicsAnswer={'huli'}
         summary={'asdadadsasd 2222222'}
 
          />

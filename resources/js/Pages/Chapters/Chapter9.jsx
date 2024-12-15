@@ -1,6 +1,11 @@
 import React from 'react'
 import Chapter from '../ChapterComponent/Chapter'
 
+import image1 from '../../assets/chapterImage/chapter9/1.jpg'
+import image2 from '../../assets/chapterImage/chapter9/2.jpg'
+import image3 from '../../assets/chapterImage/chapter9/3.jpg'
+import image4 from '../../assets/chapterImage/chapter9/4.jpg'
+
 function Chapter9({user,num}) {
   return (
     <div>
@@ -11,10 +16,7 @@ function Chapter9({user,num}) {
         mcQuestion={'Ano ang naging kasunduan nina Don Pedro at Don Diego nang hindi nila matuloy ang pagpapatay kay Don Juan?'}
         mcChoices={['Pabayaan na lang si Don Juan sa kagubatan','Bugbugin na lang si Don Juan','Ibigay ang Ibong Adarna kay Don Juan','Ibalik ang Ibong Adarna sa hari']}
         mcAnswer={'Bugbugin na lang si Don Juan'}
-        fourPics={['https://i.pinimg.com/236x/ca/4a/a5/ca4aa5bd0b67e605bca46e33cddb308e.jpg', 
-          'https://i.pinimg.com/236x/74/66/9f/74669fb3d94ccc6d374b8b4d2f58958b.jpg',
-         'https://i.pinimg.com/236x/ae/7d/bc/ae7dbc7447223b06165d14ad48dda308.jpg',
-         'https://i.pinimg.com/236x/c9/c5/95/c9c595075334d24703db3ef1b78b51ed.jpg',]}
+        fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'kapayapaan'}
         summary={'asdadadsasd 2222222'}
 
