@@ -18,7 +18,7 @@ function Chapter11({user,num}) {
         mcAnswer={'Ang panalangin'}
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'panalangin'}
-        summary={'asdadadsasd 2222222'}
+        summary={'Wala nang ibang pinagkukunan ng pag-asa si Don Juan kundi ang panalangin. Ipinalanagin niya sa Mahal na Birhen na humaba pa ang buhay at gumaling ang amang may karamdaman. Para kay Don Juan ay kaya niyang ibigay ang Ibong Adarna sa kaniyang mga kapatid kung ito ang hangad ng mga ito at hindi na ito dapat pinagtaksilan pa. Bagama’t naghihirap ay hindi niya nakalimutang sariwain ang kalagayan ng may sakit na ama, ang inang kaniyang labis na pinanabikan, ang kahariang kinalakhan, at ang bayang kaniyang sinilangan.'}
 
          />
     </div>

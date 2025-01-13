@@ -18,7 +18,7 @@ function Chapter15({user,num}) {
         mcAnswer={'Dahil batid niyang kailangan niyang magtago matapos magpabaya sa Ibong Adarna'}
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'paglisan'}
-        summary={'asdadadsasd 2222222'}
+        summary={'Madaling araw pa lang ay umalis na si Don Juan upang tumakas sa kaniyang ama. Batid niyang kailangan niyang magtago dahil sa pagpapabaya sa Ibong Adarna. Paggising ng hari ay agad itong nagtungo sa silid na kinaroroonan ng ibon. Nagulat ito nang matagpuang wala na ang ibon sa hawla. Nang ipinatawag ng hari ang kaniyang mga anak dalawa lamang ang humarap sa kaniya. Nagtangkang magsinungaling muli sina Don Pedro at Don Diego ngunit hindi sila agad pinaniwalaan ng hari. Ipinahanap ni Don Fernando si Don Juan ngunit sawi itong matagpuan. Ayon sa dalawa pang prinsipe ay nagtaksil si Don Juan at handa silang umalis upang hanapin ang nagtatagong bunsong kapatid. Naglakbay sila kung saan-saan ngunit hindi nila natagpuan si Don Juan. Paglaon ay narating nila ang kabundukan ng Armenya kung saan naroon si Don Juan.'}
 
          />
     </div>

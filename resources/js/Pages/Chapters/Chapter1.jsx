@@ -38,7 +38,7 @@ function Chapter1({user,num}) {
                     },
         ]}
         
-        summary={'asdadadsasd'}
+        summary={'Ang kaharian ng Berbanya ay tanyag bilang isang sagana at may payapang pamumuhay. Ang mga piging at pagdiriwang ay madalas na idinaraos sa kaharian ng Berbanya dahil masayahin ang hari’t reyna na namumuno dito na sila Don Fernando at Donya Valeriana. Sila ay may tatlong lalaking mga anak na sina Don Pedro, Don Diego, at si Don Juan. Ang tatlong prisipe na ito ay likas na magagaling at matatalino higit kanino pa man sa buong kaharian. Nagsanay ang tatlo sa paghawak ng mga sandata at patalim sa pakikipaglaban ngunit isa lang sa kanila ang maaaring mahirang bilang tagapagmana ng kaharian. Hindi maikakaila na paborito ni Don Fernando ang bunsong anak na si Don Juan kaya namayani ang inggit ng panganay na si Don Pedro sa kapatid.'}
         num={num}
 
          />

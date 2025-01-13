@@ -18,7 +18,7 @@ function Chapter5({user,num}) {
         mcAnswer={'Paglalakad lamang'}
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'bato'}
-        summary={'asdadadsasd 2222222'}
+        summary={'Tatlong taon na ang lumipas ay hindi pa rin nakakabalik ang magkapatid na prinsipe samantalang lalong lumubha naman ang sakit ng hari. Atubiling inutusan ni Don Fernando si Don Juan na hanapin ang mga kapatid nito at hulihin ang Ibong Adarna. Humingi ng bendisyon si Don Juan upang payagan ito na umalis para hanapin ang mga kapatid at ang natatanging lunas sa ama. Di katulad ng naunang magkapatid, hindi gumamit si Don Juan ng kabayo sa halip ay naglakad lang ito. Naniniwala ang prinsipe na kusang dadating ang biyaya sa kanya kung mabuti ang kaniyang hangarin. Nagbaon siya ng limang tinapay at kumakain lamang tuwing makaisang buwan. Panay ang usal niya ng panalangin upang makayanan ang hirap. Apat na buwan na siyang naglalakbay at tumigas na ang natitirang baon na tinapay. Paglao’y narating ni Don Juan ang kapatagang bahagi ng bundok Tabor. Doon ay natagpuan niya ang isang leprosong matandang lalaki.'}
 
          />
     </div>

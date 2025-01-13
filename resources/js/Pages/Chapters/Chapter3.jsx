@@ -18,7 +18,7 @@ function Chapter3({user,num}) {
         mcAnswer={'Tatlong buwan'}
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'lakbay'}
-        summary={'asdadadsasd 2222222'}
+        summary={'Inabot ng tatlong buwan ang paglalakbay ni Don Pedro bago tuluyang matunton ang daan paakyat sa Bundok ng Tabor. Hindi naglaon ay natagpuan din ni Don Pedro ang Piedras Platas. Dumating ang laksa-laksang ibon ngunit wala sa mga ito ang dumapo sa kumikinang na puno. Nakatulog si Don Rafael habang nag-iintay sa pagdating ng Ibong Adarna. Di nito namalayan ang pagdating ng ibon. Pitong ulit na umaawit ang Ibong Adarna at pitong ulit rin nagpapalit ng kulay ang kaniyang balahibo Nakasanayan na ng ibon ang dumumi bago matulog. Pumatak ang dumi ng ibon sa noo’y natutulog na si Don Pedro. Sa isang iglap ay naging isang bato ang prinsipe ng Berbanya.'}
 
          />
     </div>

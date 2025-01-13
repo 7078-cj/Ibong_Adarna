@@ -18,7 +18,7 @@ function Chapter18({user,num}) {
         mcAnswer={'Isang magandang hardin'}
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'hardin'}
-        summary={'asdadadsasd 2222222'}
+        summary={'Patuloy pa rin sa pagbaba si Don Juan hanggang sa marating niya ang pinakamalalim na bahagi ng balon. Namangha siya dahil isang magandang hardin ang kaniyang nasaksihan. Ito ang natatagong paraiso sa Armenya. Puno ng halaman at bulaklak sa paligid. Nagiging makulay at masamyo ang amoy ng kapaligiran dahil sa mga ito. Nakita ni Don Juan ang palasyo na yari sa ginto at pilak dahilan kung bakit ito nangingislap. Nasilayan din niya ang isang dalaga na diyosa sa kagandahan. Siya ay si Donya Juana. Di makapaniwala ang dalaga na narating ni Don Juan ang lugar na iyon. Lumuhod si Don Juan upang nagpakilala bilang prinsipe ng Armenya. Humingi din ito ng paumanhin dahil sa mapangahas na pagpunta sa lugar na iyon. Sumamo si Don Juan na tanggapin ng dalaga ang kaniyang pag-ibig. Hindi naman ito nasawi dahil inibig din siya ng dalaga.'}
 
          />
     </div>
