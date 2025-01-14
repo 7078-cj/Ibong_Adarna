@@ -50,7 +50,7 @@ function FourPicsWord({ pictures, answer, onCorrect }) {
           {isCorrect ? (
             <span className="text-teal-700">Tama! Ang sagot ay "{answer}".</span>
           ) : (
-            <span className="text-red-600">Mali! Subukan.</span>
+            <span className="text-red-600">Mali! Subukan muli.</span>
           )}
         </div>
       )}
