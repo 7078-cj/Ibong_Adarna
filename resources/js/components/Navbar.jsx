@@ -57,7 +57,7 @@ function Navbar({user}) {
       <div className="flex space-x-8">
        
           {user ? <button onClick={handleLogout} className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:shadow-outline shadow-lg transition transform hover:scale-105 active:shadow-[0.5rem_-0.5rem_rgba(244,67,54,0.5),-0.5rem_0.5rem_rgba(0,188,212,0.5)] active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_rgba(244,67,54,0.5),-0.5rem_-0.5rem_rgba(0,188,212,0.5)]">
-            logout
+            Logout
           </button>: <><a href="/login">
             <button className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:shadow-outline shadow-lg transition transform hover:scale-105 active:shadow-[0.5rem_-0.5rem_rgba(244,67,54,0.5),-0.5rem_0.5rem_rgba(0,188,212,0.5)] active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_rgba(244,67,54,0.5),-0.5rem_-0.5rem_rgba(0,188,212,0.5)]">
               SIGN IN
