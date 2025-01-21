@@ -63,6 +63,7 @@ function ChapterPage({ user, lvlData }) {
                         Previous
                     </button>
                     <span className="text-xl text-amber-100">{`${currentPage} of ${totalPages}`}</span>
+                    <span className="text-xl text-amber-100">{`Cleared: ${lvlData-1}/46`}</span>
                     <button
                         className="px-6 py-3 font-medium text-amber-100 bg-gray-800 bg-opacity-90 rounded-md shadow-md hover:bg-gray-700 hover:bg-opacity-100 disabled:bg-gray-600 disabled:opacity-50"
                         disabled={currentPage === totalPages}
