@@ -19,7 +19,7 @@ function Chapter33({user,num}) {
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'durungawan'}
         summary={'Ibong Adarna Buod Kabanata 33: Ang Paglipat sa Bundok (Saknong 1097 – 1122) Muling nagkita si Don Juan at Haring Salermo sa hardin para sa susunod na pagsubok. Nais ng hari na itapat ang bundok sa harap ng kanyang durungawan upang pumasok sa palasyo ang sariwang hangin. Bilin ng hari na mailipat ito bago pa man sumikat ang araw. Nakipagkita muli si Don Juan kay Maria Blanca at kita sa mukha nito ang pangamba. Muling pinayapa ng prinsesa ang prinsipe at sinabing siya na ang gagawa noon. Nang sumapit ang madaling araw ay tumungo si Maria Blanca sa bundok habang si Don Juan naman ay namamahinga. Pinalakad ng dalaga ang bundok sa Palacio Real gamit ang malakas na hangin. Pagsapit ng umaga, nabigla ang hari nang makita niya ang bundok sa tapat ng kaniyang durungawan. Hindi makapaniwala ang hari na muling malalagpasan ni Don Juan ang kaniyang pagsubok.'}
-
+        num={num}
          />
     </div>
   )

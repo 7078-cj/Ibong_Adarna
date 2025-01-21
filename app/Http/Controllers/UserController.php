@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Leveldata;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,13 +24,19 @@ class UserController extends Controller
 
         $registration['password'] = bcrypt($registration['password']);
         $user = User::create($registration);
+
+        Leveldata::create([
+            'user_id'=>$user->id,
+            'user_level'=>1
+        ]);
+
         auth()->guard('web')->login($user);
 
         return redirect('/');
     }
 
     public function logout(){
-        auth()->guard('web')->logout();
+        Auth::logout();
 
         return redirect('/');
         
@@ -36,11 +44,11 @@ class UserController extends Controller
 
     public function login(Request $request){
         $login = $request->validate([
-            'name'=>'required',
+            'email'=>'required',
             'password'=>'required'
         ]);
 
-        if (auth()->guard('web')->attempt(['name' => $login['name'],'password'=>$login['password']])){
+        if (auth()->guard('web')->attempt(['email' => $login['email'], 'password' => $login['password']])){
             $request->session()->regenerate();
         }
 

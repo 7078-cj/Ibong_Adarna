@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import backgroundImage from '../assets/lvlpageBG.gif';
 import NavBar from '../components/Navbar';
 
-function ChapterPage({ user }) {
+function ChapterPage({ user, lvlData }) {
     const [currentPage, setCurrentPage] = useState(1);
     const chaptersPerPage = 10;
 
-    const totalChapters = 46;
+    const totalChapters = lvlData!=46 ? lvlData : 46;
     const totalPages = Math.ceil(totalChapters / chaptersPerPage);
 
     const paginatedChapters = [];
@@ -29,17 +29,24 @@ function ChapterPage({ user }) {
             >
                 {/* Chapter Buttons Container */}
                 <div className="flex flex-wrap justify-center gap-4 px-4">
-                    {paginatedChapters.map((chapterNumber) => (
-                        <a key={chapterNumber} href={`/chapter/${chapterNumber}`}>
-                            <button
-                                className="w-40 h-16 text-lg font-semibold text-amber-100 bg-amber-800 bg-opacity-90 rounded-lg shadow-lg hover:bg-amber-700 hover:bg-opacity-100"
-                                style={{
-                                    transition: 'background-color 0.3s, transform 0.3s',
-                                }}
-                            >
-                                {`Chapter ${chapterNumber}`}
-                            </button>
-                        </a>
+                    {paginatedChapters.map((chapterNumber, index) => (
+                        <div key={chapterNumber}>
+                            <a href={`/chapter/${chapterNumber}`}>
+                                <button
+                                    className={`w-40 h-16 text-lg font-semibold ${
+                                        index === paginatedChapters.length - 1 
+                                            ? 'text-amber-100 bg-amber-800 bg-opacity-90 hover:bg-amber-700 hover:bg-opacity-100' 
+                                            : 'text-gray-400 bg-gray-300 cursor-not-allowed'
+                                    } rounded-lg shadow-lg`}
+                                    style={{
+                                        transition: 'background-color 0.3s, transform 0.3s',
+                                    }}
+                                    disabled={index !== paginatedChapters.length - 1} // Disable if it's not the last item
+                                >
+                                    {`Chapter ${chapterNumber}`}
+                                </button>
+                            </a>
+                        </div>
                     ))}
                 </div>
 

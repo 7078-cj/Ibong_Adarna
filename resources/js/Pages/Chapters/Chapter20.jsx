@@ -19,7 +19,7 @@ function Chapter20({user,num}) {
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'pagibig'}
         summary={'Nabigla si Prinsesa Leonora nang makita si Don Juan. Nabighani naman ang prinsipe sa prinsesa dahil sa labis nitong kagandahan. Minamadaling paalisin ng prinsesa si Don Juan dahil hindi magtatagal ay maaari nang dumating ang serpyente. Nagmakaawa si Don Juan kay Prinsesa Leonora na siya ay kupkupin sapagkat tunay na nabihag niya ang puso ng prinsipe. Nawala na sa isip ni Don Juan na nag-iintay sa labas ng palasyo si Donya Juana. Dahil matatamis na pananalita ni Don Juan ay lumambot ang puso ni Prinsesa Leonora at pinapanhik ito sa loob ng palasyo. Isinalaysay ni Don Juan ang mga naging pagdurusa bago marating ang lugar na iyon. Nangako ng tapat na pag-ibig si Don Juan sa prinsesa bagama’t may pangamba ang prinsesa na pagtataksilan ito. Ilang sandali pa ay nakaramdam sila ng pagyanig sa buong paligid.'}
-
+        num={num}
          />
     </div>
   )

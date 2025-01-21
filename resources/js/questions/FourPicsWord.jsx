@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function FourPicsWord({ pictures, answer, onCorrect }) {
-  const [userGuess, setUserGuess] = useState(''); // Track the user's input
-  const [isCorrect, setIsCorrect] = useState(null); // Feedback on the answer (true/false/null)
+  const [userGuess, setUserGuess] = useState(''); 
+  const [isCorrect, setIsCorrect] = useState(null); 
+  const [jumbledWord, setJumbledWord] = useState(''); 
+
+  useEffect(() => {
+    
+    const shuffleWord = (word) => {
+      const shuffledArray = word.split('').sort(() => Math.random() - 0.5);
+      return shuffledArray.join('');
+    };
+
+    setJumbledWord(shuffleWord(answer)); 
+  }, [answer]); 
 
   const handleInputChange = (event) => {
     setUserGuess(event.target.value);
@@ -30,6 +41,7 @@ function FourPicsWord({ pictures, answer, onCorrect }) {
           />
         ))}
       </div>
+      <div className="text-xl font-semibold mb-4">{jumbledWord}</div>
       <div className="mb-5">
         <input
           type="text"
@@ -41,7 +53,7 @@ function FourPicsWord({ pictures, answer, onCorrect }) {
         <button
           onClick={handleSubmit}
           className="bg-teal-600 text-white py-3 px-6 rounded-md cursor-pointer text-base font-sans transition-all duration-200 ease-in-out hover:bg-teal-500 active:bg-yellow-400 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-500"
-          >
+        >
           Submit
         </button>
       </div>

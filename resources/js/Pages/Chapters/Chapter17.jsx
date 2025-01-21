@@ -19,7 +19,7 @@ function Chapter17({user,num}) {
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'balon'}
         summary={'Sa kanilang paglalakbay ay isang balon ang natuklasan ng magkakapatid. Ito ay may makikinis na marmol at ang lumot sa paligid nito ay may gintong nakaukit. Manghang-mangha ang magkakapatid sa nakita dahil sa lalim ng balon ay wala naman itong lamang tubig. May makikita din doon na lubid para sa mga nais magtangkang bumaba. Unang bumaba si Don Pedro bilang siya ang panganay ngunit dahil sa kadiliman ay hanggang tatlumpung dipa lamang ang kinaya nito. Sumunod naman na bumaba si Don Diego ngunit hindi rin ito nagtagal sa ilalim. Si Don Juan ang pinakahuling sumubok. Buong tapang nitong hinarap ang kadiliman sa balon. Malalim na ang narating nito ngunit patuloy pa rin siya sa pagbaba. Si Don Pedro at Don Diego ay nababahala at naiinip na sa kakaintay sa muling paglabas ni Don Juan.'}
-
+        num={num}
          />
     </div>
   )

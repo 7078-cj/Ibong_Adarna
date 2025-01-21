@@ -20,6 +20,7 @@ function Chapter({user, fibQestion, fibAnswer ,mcQuestion ,mcChoices ,mcAnswer ,
                              fourPics={fourPics}
                              fourPicsAnswer={fourPicsAnswer}
                              num={num}
+                             setRead={setRead}
                              
                             
                              />:<ReadPage onRead={setRead}

@@ -19,7 +19,7 @@ function Chapter12({user,num}) {
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'pinagaling'}
         summary={'Biglang sumulpot ang matandang ermitanyo sa libis ng isang bundok. Doon niya natagpuang nakahandusay sa lupa si Don Juan. Labis na nahabag ang ermitanyo sa sinapit ng prinsipe. Sa ikalawang pagkakataon ay muling ginamot ng matanda ang sugat ni Don Juan. Sa isang iglap ay biglang naglaho ang mga sugat sa katawan ng prinsipe. Namangha muli si Don Juan sa isang pang himala na nasaksihan niya. Niyakap nito ang matandang ermitanyo tanda ng kaniyang pagpapasalamat dahil sa pagliligtas sa kaniyang buhay. Pagkatapos ay inutos ng matanda na umuwi na si Don Juan sa palasyo upang iligtas ang amang hari. Madaling tinahak ng prinsipe ang daan pabalik sa kaharian ng Berbanya.'}
-
+        num={num}
          />
     </div>
   )

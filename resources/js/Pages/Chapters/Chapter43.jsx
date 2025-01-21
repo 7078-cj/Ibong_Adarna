@@ -19,7 +19,7 @@ function Chapter43({user,num}) {
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'ita'}
         summary={'Ibong Adarna Buod Kabanata 43: Ang Pagpaparusa kay Don Juan (Saknong 1542 – 1579) Sa kabila ng pagpapalabas ng dula ay hindi pa rin makaalala si Don Juan sa halip ay mas lalo pa itong nawili kay Prinsesa Leonora. Ipinagpatuloy ng dalawang ita ang dula at isinalaysay nito ang pagtakas noon ng dalawa kay Haring Salermo. Upang di maabutan ng hari ay ginamit ni Maria Blanca ang kapangyarihan ng diyamanteng singsing. Isinalaysay din nito ang mga pangyayari nang sila ay makabalik na sa kaharian ng Berbanya. Wala pa ring maalala ang negrito kaya patuloy itong pinaghahampas ng negrita. Nasasaktan si Don Juan ngunit binabalewala lang niya ito dahil sa Prinsesa Leonora ang nananatili sa puso ng prinsipe. Naiyak si Maria Blanca dahil batid nitong tuluyan ng nakalimot si Don Juan. Kinuha ni Maria Blanca ang prasko at babasagin na niya ito upang gunawin ang buong reyno.'}
-
+        num={num}
          />
     </div>
   )

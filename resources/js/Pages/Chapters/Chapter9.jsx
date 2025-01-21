@@ -19,7 +19,7 @@ function Chapter9({user,num}) {
         fourPics={[image1, image2, image3, image4,]}
         fourPicsAnswer={'kapayapaan'}
         summary={'Agad na gumaling ang mga sugat sa palad ni Don Juan matapos itong pahiran ng gamot ng ermitanyo. Muling namangha si Don Juan sa hiwagang ipinamalas ng nito. Nagbilin ang ermitanyo sa tatlong prinsipe na nawa’y makarating sila ng payapa alang-alang sa kanilang amang hari. Nagbilin din ito na huwag sanang paglililo ang manahan sa kanilang mga puso. Sa kanilang pag-uwi ay nauunang naglalakad si Don Juan dala-dala ang hawla. Habang nasa likod naman nito ang dalawa pa niyang kapatid. Palihim na kinakausap ni Don Pedro si Don Diego. Dahil sa sobrang inggit nito kay Don Juan, binalak ni Don Pedro na patayin ang kaniyang bunsong kapatid ngunit ito ay tinutulan ni Don Diego. Sa halip na patayin ay napagkasunduan ng dalawa na bugbugin nalang si Don Juan. Sa kagubatan na ito aabutan ng kamatayan at madadala pa nila ang Ibong Adarna sa kaharian ng Berbanya. Hindi nanlaban si Don Juan kahit pa siya ang pinagtutulungan na bugbugin ng dalawa niyang kapatid. Iniwan ng magkapatid si Don Juan na nakagulapay sa gitna ng kagubatan. Tumakas sila tangay ang Ibong Adarna.'}
-
+        num={num}
          />
     </div>
   )

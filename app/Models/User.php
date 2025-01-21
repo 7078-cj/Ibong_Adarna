@@ -45,4 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function levelData(){
+        return $this->hasOne(Leveldata::class,'user_id');
+    }
 }

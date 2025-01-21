@@ -4,12 +4,20 @@ import NavBar from '../../components/Navbar';
 import MultipleChoice from '../../questions/MultipleChoice';
 import FIB from '../../questions/FIB';
 import FourPicsWord from '../../questions/FourPicsWord';
+import { Inertia } from '@inertiajs/inertia';
 
-function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mcAnswer, fourPics = [], fourPicsAnswer, num }) {
+function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mcAnswer, fourPics = [], fourPicsAnswer, num,setRead }) {
   const [mcIsCorrect, setMcIsCorrect] = useState(false);
   const [fibIsCorrect, setFibIsCorrect] = useState(false);
   const [fourPicsWordIsCorrect, setFourPicsWordIsCorrect] = useState(false);
   const allCorrect = mcIsCorrect && fibIsCorrect && fourPicsWordIsCorrect;
+
+  
+    const handleLevelUp = (num) =>{
+      Inertia.post('/levelup',{"chapter":num})
+    }
+
+  
 
   const handleMcCorrect = (newCorrectValue) => {
     setMcIsCorrect(newCorrectValue);
@@ -62,13 +70,25 @@ function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mc
         {allCorrect ? (
           <div className="text-center p-6 bg-opacity-80 bg-black text-white rounded-xl shadow-2xl w-3/4 max-w-lg">
             <h1 className="text-4xl mb-6">All Answers are Correct!</h1>
-            <a href={`/chapter/${parseInt(num) + 1}`} className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md">
+            
+            <a
+              href={`/chapter/${parseInt(num) + 1}`}
+              className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md"
+              onClick={(e) => {
+                  e.preventDefault(); // Prevent the default navigation
+                  handleLevelUp(num); // Execute the level-up function
+                  window.location.href = `/chapter/${parseInt(num) + 1}`; // Manually navigate to the next chapter
+              }}
+          >
               Go to Chapter {parseInt(num) + 1}
-            </a>
+          </a>
+            
+            
           </div>
         ) : (
           <div className="p-5 mx-auto my-8 text-center border border-gray-300 rounded-lg shadow-lg bg-gradient-to-b from-teal-300 via-teal-400 to-teal-500 w-full lg:w-2/3 md:w-1/2 h-[30rem] sm:h-[28rem] overflow-auto flex justify-center items-center">
             {steps[currentStep]}
+            
           </div>
         )}
       </div>

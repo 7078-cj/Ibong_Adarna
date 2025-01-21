@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -18,7 +20,7 @@ Route::get('/register', function () {
 
 Route::post('/register-user',[UserController::class, 'register']);
 
-Route::post('/logout-user',[UserController::class, 'logout']);
+
 
 //authenticated middleware
 Route::middleware('auth')->group(function (){
@@ -33,8 +35,9 @@ Route::middleware('auth')->group(function (){
 
     Route::get('/leaderboard', function () {
         $user = auth()->guard('web')->user();
+        $allUser = User::all();
 
-        return inertia('LeaderBoards',['user'=>$user]);
+        return inertia('LeaderBoards',['user'=>$user,'allUser'=>$allUser]);
     });
 
     Route::get('/chapter/{num}', [ChapterController::class, 'showChapter']);
@@ -44,10 +47,12 @@ Route::middleware('auth')->group(function (){
 
         return inertia('ProfilePage',['user'=>$user]);
     });
-
-
-
     
+    Route::post('/levelup',[ChapterController::class, 'levelUp']);
+
+
+
+    Route::post('/logout-user',[UserController::class, 'logout']);
 
 
 });

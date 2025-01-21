@@ -1,5 +1,6 @@
 import React from 'react'
 import {useForm} from '@inertiajs/react'
+import { Inertia } from '@inertiajs/inertia';
 
 function Register() {
 
@@ -21,9 +22,6 @@ function Register() {
 
   return (
         <div>
-          {data.name}
-          {data.email}
-          {data.password}
                 <div className="flex min-h-screen bg-gray-900 items-center justify-center">
       <div className="w-full max-w-sm bg-gray-800 p-8 rounded-lg shadow-lg">
         {/* <!-- Header Section --> */}
