@@ -1,44 +1,34 @@
 import React, { useState } from 'react';
-
 import NavBar from '../../components/Navbar';
 import MultipleChoice from '../../questions/MultipleChoice';
 import FIB from '../../questions/FIB';
 import FourPicsWord from '../../questions/FourPicsWord';
 import { Inertia } from '@inertiajs/inertia';
 
-function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mcAnswer, fourPics = [], fourPicsAnswer, num,setRead }) {
+function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mcAnswer, fourPics = [], fourPicsAnswer, num, setRead }) {
   const [mcIsCorrect, setMcIsCorrect] = useState(false);
   const [fibIsCorrect, setFibIsCorrect] = useState(false);
   const [fourPicsWordIsCorrect, setFourPicsWordIsCorrect] = useState(false);
   const allCorrect = mcIsCorrect && fibIsCorrect && fourPicsWordIsCorrect;
 
-  
-    const handleLevelUp = (num) =>{
-      Inertia.post('/levelup',{"chapter":num})
-    }
-
-  
+  const handleLevelUp = (num) => {
+    Inertia.post('/levelup', { "chapter": num });
+  };
 
   const handleMcCorrect = (newCorrectValue) => {
     setMcIsCorrect(newCorrectValue);
     setCurrentStep((prevStep) => prevStep + 1);
   };
+
   const handleFibCorrect = (newCorrectValue) => {
     setFibIsCorrect(newCorrectValue);
     setCurrentStep((prevStep) => prevStep + 1);
   };
+
   const handleFourPicsWordCorrect = (newCorrectValue) => {
     setFourPicsWordIsCorrect(newCorrectValue);
     setCurrentStep((prevStep) => prevStep + 1);
   };
-
-  const pictures = [
-    'https://via.placeholder.com/150/FF5733',
-    'https://via.placeholder.com/150/33FF57',
-    'https://via.placeholder.com/150/3357FF',
-    'https://via.placeholder.com/150/57FF33',
-  ];
-  const correctAnswer = 'Color';
 
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -69,28 +59,39 @@ function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mc
 
         {allCorrect ? (
           <div className="text-center p-6 bg-opacity-80 bg-black text-white rounded-xl shadow-2xl w-3/4 max-w-lg">
-            <h1 className="text-4xl mb-6">All Answers are Correct!</h1>
-            
+            <h1 className="text-4xl mb-6">Lahat ng sagot ay tama!</h1>
+
             <a
               href={`/chapter/${parseInt(num) + 1}`}
               className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md"
               onClick={(e) => {
-                  e.preventDefault(); // Prevent the default navigation
-                  handleLevelUp(num); // Execute the level-up function
-                  window.location.href = `/chapter/${parseInt(num) + 1}`; // Manually navigate to the next chapter
+                e.preventDefault(); // Prevent the default navigation
+                handleLevelUp(num); // Execute the level-up function
+                window.location.href = `/chapter/${parseInt(num) + 1}`; // Manually navigate to the next chapter
               }}
-          >
-              Go to Chapter {parseInt(num) + 1}
-          </a>
-            
-            
+            >
+              Pumunta sa Kabanata {parseInt(num) + 1}
+            </a>
           </div>
         ) : (
-          <div className="p-5 mx-auto my-8 text-center border border-gray-300 rounded-lg shadow-lg bg-gradient-to-b from-teal-300 via-teal-400 to-teal-500 w-full lg:w-2/3 md:w-1/2 h-[30rem] sm:h-[28rem] overflow-auto flex justify-center items-center">
+          <div className="">
             {steps[currentStep]}
-            
           </div>
         )}
+
+        {/* Go Back to Read Page Button - Positioned Beside Left Side */}
+        <div className="absolute top-1/2 left-10 transform -translate-y-1/2">
+          <button
+            onClick={() => Inertia.visit(`/chapter/${num}`)} // Inertia navigation to the Read Page
+            className="bg-teal-700 hover:bg-teal-500 text-white py-2 px-4 rounded-md shadow-lg flex items-center space-x-2 transition-all"
+          >
+            {/* Left Arrow Symbol */}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Basahin muli ang buod</span>
+          </button>
+        </div>
       </div>
     </>
   );
