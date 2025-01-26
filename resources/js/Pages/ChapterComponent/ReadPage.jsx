@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
-import readPage from '../../assets/readPageBG.gif'; // Import the gif
+import readPage from '../../assets/ReadBg.gif'; // Import the gif
 
 function ReadPage({ onRead, summary, user }) {
 
@@ -20,8 +20,14 @@ function ReadPage({ onRead, summary, user }) {
       >
         <div className="flex justify-center items-start space-x-6 flex-col">
           {/* Increased container size */}
-          <div className="w-[1000px] h-[500px] max-h-[600px] p-8 bg-gradient-to-b from-[#6F4F37] to-[#3E2723] rounded-lg shadow-lg text-white text-xl z-10 overflow-y-auto">
-            <p>{formattedSummary}</p>
+          <div className="relative w-[1000px] h-[500px] max-h-[600px] p-8 rounded-lg shadow-lg text-white text-xl z-10 overflow-y-auto">
+            {/* Pseudo-element for background with reduced opacity */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#6F4F37] to-[#3E2723] rounded-lg opacity-70"></div>
+            
+            {/* Content inside the container */}
+            <div className="relative z-10"> {/* Relative positioning to ensure this is above the pseudo-element */}
+              <p>{formattedSummary}</p>
+            </div>
           </div>
 
           <div className="flex justify-center items-center w-full mt-6">

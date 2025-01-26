@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavBar from '../components/Navbar';
-import backgroundImage from "../assets/backgroundImage.gif";
+import backgroundImage from "../assets/wordbankBg.gif";
 
 function WordBank({ user }) {
   const words = [
@@ -1706,14 +1706,14 @@ function WordBank({ user }) {
     <>
       <NavBar user={user} />
       <div
-        className="h-screen w-screen bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
+        className="h-screen w-screen bg-cover bg-center bg-no-repeat flex flex-row gap-5 justify-center items-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
           backgroundAttachment: 'fixed',
         }}
       >
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 mb-5">
           {currentCardIndexes.map((index, i) => {
             const card = words[index];
             return (
