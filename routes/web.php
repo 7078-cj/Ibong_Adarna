@@ -50,7 +50,11 @@ Route::middleware('auth')->group(function (){
     
     Route::post('/levelup',[ChapterController::class, 'levelUp']);
 
+    Route::get('/wordbank', function () {
+        $user = auth()->guard('web')->user();
 
+        return inertia('WordBank', ['user'=>$user]);
+    });
 
     Route::post('/logout-user',[UserController::class, 'logout']);
 

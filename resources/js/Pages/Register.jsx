@@ -1,99 +1,131 @@
-import React from 'react'
-import {useForm} from '@inertiajs/react'
-import { Inertia } from '@inertiajs/inertia';
+import React, { useState } from 'react';
+import { useForm } from '@inertiajs/react';
 
 function Register() {
-
   const { data, setData, post, processing, errors } = useForm({
     name: '',
-    email:'',
+    email: '',
     password: '',
+    confirmPassword: '', 
   });
 
-  
-  const submit = (e) => {
-      e.preventDefault();
+  const [passwordError, setPasswordError] = useState('');
 
-      
-      post('/register-user');
+  const submit = (e) => {
+    e.preventDefault();
+
+    if (data.password !== data.confirmPassword) {
+      setPasswordError('Di tugma ang password');
+      return; 
+    }
+
+    setPasswordError(''); 
+
+    post('/register-user');
   };
 
-
-
   return (
-        <div>
-                <div className="flex min-h-screen bg-gray-900 items-center justify-center">
+    <div className="flex min-h-screen bg-gray-900 items-center justify-center">
       <div className="w-full max-w-sm bg-gray-800 p-8 rounded-lg shadow-lg">
-        {/* <!-- Header Section --> */}
-        <div className="text-center mb-6">
-          <h2 className="text-3xl font-extrabold text-white">Gumawa ng Account</h2>
-          <p className="mt-2 text-sm text-gray-300">Halina't simulan ang iyong paglalakbay!</p>
-        </div>
+        <h1 className="text-3xl font-extrabold text-white text-center">Register User</h1>
 
-        {/* <!-- Register Form --> */}
-        <form className="space-y-6"  method="POST" onSubmit={submit}>
-          
-          {/* <!-- Name Input --> */}
+        {/* Registration Form */}
+        <form className="space-y-4" onSubmit={submit}>
+          {/* Name Input */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-300">Username</label>
+            <label htmlFor="name" className="block text-sm font-medium text-white">Username</label>
             <input
               type="text"
               name="name"
               id="name"
               required
-              onChange={(e)=>setData('name',e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-800 px-3 py-2 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-white"
+              onChange={(e) => setData('name', e.target.value)}
+              className="block px-3 py-2 mt-1 w-full text-sm rounded-md border border-gray-300 shadow-sm focus:ring-neutral-500 focus:border-neutral-500"
+              value={data.name}
+              placeholder="Enter your username"
             />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-2">{'May gumagamit na ng username na ito. Pumili ng iba.'}</p>
+            )}
           </div>
 
-          {/* <!-- Email Input --> */}
+          {/* Email Input */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300">Email Address</label>
+            <label htmlFor="email" className="block text-sm font-medium text-white">Email</label>
             <input
               type="email"
               name="email"
               id="email"
               autoComplete="email"
               required
-              onChange={(e)=>setData('email',e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-800 px-3 py-2 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-white"
+              onChange={(e) => setData('email', e.target.value)}
+              className="block px-3 py-2 mt-1 w-full text-sm rounded-md border border-gray-300 shadow-sm focus:ring-neutral-500 focus:border-neutral-500"
+              value={data.email}
+              placeholder="Enter your email"
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-2">{'May gumagamit na ng email na ito. Sa halip, mag-log in ka na lang.'}</p>
+            )}
           </div>
 
-          {/* <!-- Password Input --> */}
+          {/* Password Input */}
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-300">Password</label>
+            <label htmlFor="password" className="block text-sm font-medium text-white">Password</label>
             <input
               type="password"
               name="password"
               id="password"
               required
-              onChange={(e)=>setData('password',e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-800 px-3 py-2 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-white"
+              onChange={(e) => setData('password', e.target.value)}
+              className="block px-3 py-2 mt-1 w-full text-sm rounded-md border border-gray-300 shadow-sm focus:ring-neutral-500 focus:border-neutral-500"
+              value={data.password}
+              placeholder="Enter your password"
             />
+            {errors.password && (
+              <p className="text-red-500 text-sm mt-2">{errors.password}</p>
+            )}
           </div>
 
-          
-          {/* <!-- Submit Button --> */}
+          {/* Confirm Password Input */}
+          <div>
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-white">Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              required
+              onChange={(e) => setData('confirmPassword', e.target.value)}
+              className="block px-3 py-2 mt-1 w-full text-sm rounded-md border border-gray-300 shadow-sm focus:ring-neutral-500 focus:border-neutral-500"
+              value={data.confirmPassword}
+              placeholder="Confirm your password"
+            />
+            {passwordError && (
+              <p className="text-red-500 text-sm mt-2">{passwordError}</p>
+            )}
+          </div>
+
+          {/* Submit Button */}
           <div>
             <button
               type="submit"
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Gumawa ng account
+              Mag-register
             </button>
           </div>
         </form>
 
-        {/* <!-- Sign-in Link --> */}
-        <div className="mt-6 text-center">
+        {/* Divider */}
+        <div className="my-6 border-t border-gray-600"></div>
+
+        {/* Sign-in Link */}
+        <div className="text-center">
           <p className="text-sm text-gray-300">Mayroon nang account?</p>
-          <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">Mag-sign in</a>
+          <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">Mag-login</a>
         </div>
       </div>
     </div>
-                </div>
-  )
+  );
 }
 
-export default Register
+export default Register;
