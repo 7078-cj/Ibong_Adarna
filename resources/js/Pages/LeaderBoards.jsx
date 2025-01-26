@@ -53,7 +53,7 @@ function LeaderBoards({allUser,user}) {
                   {/* Name (centered) */}
                   <div className="flex-grow text-center flex flex-row gap-10 justify-between">
                     <span className="text-xl text-white">{player.name}</span>
-                    <span className="text-xl text-white">{player.level_data.user_level}</span>
+                    <span className="text-xl text-white">{player.level_data.user_level!=46 ? `${player.level_data.user_level}/46`:"Completed"}</span>
                   </div>
   
                   {/* Score */}

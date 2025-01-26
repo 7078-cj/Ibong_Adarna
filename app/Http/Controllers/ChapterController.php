@@ -38,6 +38,12 @@ class ChapterController extends Controller
             $levelData->user_level += 1; 
             $levelData->save(); 
         }
+
+        else if($chapter >=46){
+
+            return inertia('Congratulation');
+
+        }
           
         
 
