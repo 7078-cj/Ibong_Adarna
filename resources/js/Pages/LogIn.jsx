@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from '@inertiajs/react';
 
+
 function LogIn() {
   const { data, setData, post, processing, errors } = useForm({
     email: '',
@@ -15,6 +16,10 @@ function LogIn() {
 
   return (
     <div className="flex min-h-screen bg-gray-900 items-center justify-center">
+
+        
+
+
       <div className="w-full max-w-sm bg-gray-800 p-8 rounded-lg shadow-lg">
         {/* Header Section */}
         <div className="text-center mb-6">
@@ -36,6 +41,7 @@ function LogIn() {
               onChange={(e) => setData('email', e.target.value)}
               className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-800 px-3 py-2 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-white"
             />
+             {errors.email && <div className="text-red-600 text-sm mt-1">{errors.email}</div>}
           </div>
 
           {/* Password Input */}
@@ -49,6 +55,7 @@ function LogIn() {
               onChange={(e) => setData('password', e.target.value)}
               className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-800 px-3 py-2 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-white"
             />
+             {errors.email && <div className="text-red-600 text-sm mt-1">{errors.email}</div>}
           </div>
 
           {/* Submit Button */}

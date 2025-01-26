@@ -13,26 +13,37 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
-    public function register(Request $request){
-        $registration = $request->validate([
-            'name'=>['required',Rule::unique('users','name')],
-            'email'=>['required','email',Rule::unique('users','email')],
-            'password'=>['required','min:8','max:200']
-        ]);
+    public function register(Request $request)
+    {
         
-
-
-        $registration['password'] = bcrypt($registration['password']);
-        $user = User::create($registration);
-
-        Leveldata::create([
-            'user_id'=>$user->id,
-            'user_level'=>1
+        $registration = $request->validate([
+            'name' => ['required', Rule::unique('users', 'name')],
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'password' => ['required', 'min:8', 'max:200'],
         ]);
 
-        auth()->guard('web')->login($user);
+        
+        $registration['password'] = bcrypt($registration['password']);
 
-        return redirect('/');
+        try {
+            
+            $user = User::create($registration);
+
+            
+            Leveldata::create([
+                'user_id' => $user->id,
+                'user_level' => 1,
+            ]);
+
+            
+            auth()->guard('web')->login($user);
+
+           
+            return redirect()->route('home')->with('success', 'Registration successful!');
+        } catch (\Exception $e) {
+           
+            return redirect()->back()->withErrors(['registration' => 'Registration failed: ' . $e->getMessage()])->withInput();
+        }
     }
 
     public function logout(){
@@ -43,15 +54,29 @@ class UserController extends Controller
     }
 
     public function login(Request $request){
-        $login = $request->validate([
-            'email'=>'required',
-            'password'=>'required'
-        ]);
+         
+            $login = $request->validate([
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
 
-        if (auth()->guard('web')->attempt(['email' => $login['email'], 'password' => $login['password']])){
-            $request->session()->regenerate();
-        }
+            try {
+                
+                if (auth()->guard('web')->attempt(['email' => $login['email'], 'password' => $login['password']])) {
+                    
+                    $request->session()->regenerate();
 
-        return redirect('/');
+                   
+                    return redirect()->intended('/');
+                } else {
+                    
+                    return redirect()->back()->withErrors([
+                        'email' => 'Ang ibinigay na mga kredensyal ay hindi tumutugma sa aming mga tala.',
+                    ])->withInput($request->only('email'));
+                }
+            } catch (\Exception $e) {
+                
+                return redirect()->back()->withErrors(['login' => 'Login failed: ' . $e->getMessage()])->withInput($request->only('email'));
+            }
     }
 }

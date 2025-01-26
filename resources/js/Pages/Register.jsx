@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from '@inertiajs/react';
 
+
+
 function Register() {
   const { data, setData, post, processing, errors } = useForm({
     name: '',
