@@ -1662,30 +1662,45 @@ function WordBank({ user }) {
     }
   ];
 
-  const [currentCardIndex, setCurrentCardIndex] = useState(0);
-  const [flipped, setFlipped] = useState(false);
+  const [currentCardIndexes, setCurrentCardIndexes] = useState([0, 1, 2, 3]); // Indexes for four words
+  const [flipped, setFlipped] = useState(Array(4).fill(false)); // Flipped state for four cards
 
-  const handleFlip = () => {
-    setFlipped(!flipped);
+  const handleFlip = (index) => {
+    setFlipped((prevFlipped) => {
+      const newFlipped = [...prevFlipped];
+      newFlipped[index] = !newFlipped[index]; // Toggle the specific card
+      return newFlipped;
+    });
   };
 
-  const handleNextWord = () => {
+  const handleNextWords = () => {
     // Reset the flipped state to show the front side first
-    setFlipped(false);
+    setFlipped(Array(4).fill(false));
 
-    // Choose the next word with a small delay to show the front first
+    // Choose the next four words with a small delay to show the front first
     setTimeout(() => {
-      const nextIndex = Math.floor(Math.random() * words.length);
-      setCurrentCardIndex(nextIndex);
+      const nextIndexes = [];
+      while (nextIndexes.length < 4) {
+        const nextIndex = Math.floor(Math.random() * words.length);
+        if (!nextIndexes.includes(nextIndex)) {
+          nextIndexes.push(nextIndex);
+        }
+      }
+      setCurrentCardIndexes(nextIndexes);
     }, 300);
   };
 
-  useEffect(()=>{
-    const nextIndex = Math.floor(Math.random() * words.length);
-    setCurrentCardIndex(nextIndex);
-  },[])
-
-  const card = words[currentCardIndex];
+  useEffect(() => {
+    // Initialize with the first four words
+    const initialIndexes = [];
+    while (initialIndexes.length < 4) {
+      const nextIndex = Math.floor(Math.random() * words.length);
+      if (!initialIndexes.includes(nextIndex)) {
+        initialIndexes.push(nextIndex);
+      }
+    }
+    setCurrentCardIndexes(initialIndexes);
+  }, []);
 
   return (
     <>
@@ -1694,58 +1709,65 @@ function WordBank({ user }) {
         className="h-screen w-screen bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
+          backgroundSize: 'cover',
+          backgroundAttachment: 'fixed',
         }}
       >
-        <div
-          className={`relative w-80 h-96 cursor-pointer transform-style-preserve-3d transition-transform duration-500 ${
-            flipped ? "rotate-y-180" : ""
-          }`}
-          onClick={handleFlip}
-        >
-          {/* Front Side */}
-          <div
-            className="absolute inset-0 text-white border border-gray-300 rounded-lg shadow-lg flex flex-col justify-center p-6 backface-hidden"
-            style={{
-              background: "linear-gradient(to bottom right, #007b8f, #5a8f94)", // Bluish gradient
-              boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)", // 3D effect
-            }}
-          >
-            <h3 className="font-extrabold text-3xl mb-4 text-center">{card.word}</h3>
-            <p className="text-lg mb-4 text-center italic">{card.meaning}</p>
-          </div>
+        <div className="grid grid-cols-2 gap-4">
+          {currentCardIndexes.map((index, i) => {
+            const card = words[index];
+            return (
+              <div
+                key={index}
+                className={`relative w-80 h-96 cursor-pointer transform-style-preserve-3d transition-transform duration-500 ${
+                  flipped[i] ? 'rotate-y-180' : ''
+                }`}
+                onClick={() => handleFlip(i)}
+              >
+                {/* Front Side */}
+                <div
+                  className="absolute inset-0 text-white border border-gray-300 rounded-lg shadow-lg flex flex-col justify-center p-6 backface-hidden"
+                  style={{
+                    background: 'linear-gradient(to bottom right, #007b8f, #5a8f94)', // Bluish gradient
+                    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', // 3D effect
+                  }}
+                >
+                  <h3 className="font-extrabold text-3xl mb-4 text-center">{card.word}</h3>
+                  <p className="text-lg mb-4 text-center italic">{card.meaning}</p>
+                </div>
 
-          {/* Back Side */}
-          <div
-            className="absolute inset-0 text-white border border-gray-300 rounded-lg shadow-lg flex flex-col justify-center p-6 transform rotate-y-180 backface-hidden"
-            style={{
-              background: "linear-gradient(to bottom right, #5a8f94, #3b6b71)", // Bluish gradient
-              boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)", // 3D effect
-            }}
-          >
-            
-            <h3 className="font-extrabold text-2xl text-center">Gamit sa Pangungusap</h3>
-            <p className="text-lg text-center italic">"{card.example}"</p>
+                {/* Back Side */}
+                <div
+                  className="absolute inset-0 text-white border border-gray-300 rounded-lg shadow-lg flex flex-col justify-center p-6 transform rotate-y-180 backface-hidden"
+                  style={{
+                    background: 'linear-gradient(to bottom right, #5a8f94, #3b6b71)', // Bluish gradient
+                    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', // 3D effect
+                  }}
+                >
+                  <h3 className="font-extrabold text-2xl text-center">Gamit sa Pangungusap</h3>
+                  <p className="text-lg text-center italic">"{card.example}"</p>
 
-            <div className="my-4 border-t border-white opacity-50"></div> {/* Divider */}
+                  <div className="my-4 border-t border-white opacity-50"></div> {/* Divider */}
 
-            {/* Synonyms and Antonyms */}
-            <div className="text-center">
-              <h4 className="font-semibold text-xl mb-2">Mga Kasingkahulugan</h4>
-              <p className="text-lg">{card.synonyms}</p>
+                  {/* Synonyms and Antonyms */}
+                  <div className="text-center">
+                    <h4 className="font-semibold text-xl mb-2">Mga Kasingkahulugan</h4>
+                    <p className="text-lg">{card.synonyms}</p>
 
-              <div className="my-4 border-t border-white opacity-50"></div> {/* Divider */}
+                    <div className="my-4 border-t border-white opacity-50"></div> {/* Divider */}
 
-              <h4 className="font-semibold text-xl mb-2">Mga Kasalungat</h4>
-              <p className="text-lg">{card.antonyms}</p>
-            </div>
-          </div>
+                    <h4 className="font-semibold text-xl mb-2">Mga Kasalungat</h4>
+                    <p className="text-lg">{card.antonyms}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <button
           className="mt-8 px-8 py-3 bg-teal-700 text-white rounded-lg shadow-lg hover:bg-teal-600 active:bg-teal-500 transition-all duration-700 transform hover:opacity-100 active:scale-500 opacity-90"
-          onClick={handleNextWord}
+          onClick={handleNextWords}
         >
           Susunod na Salita
         </button>
