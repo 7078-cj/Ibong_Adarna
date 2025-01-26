@@ -5,15 +5,18 @@ import FIB from '../../questions/FIB';
 import FourPicsWord from '../../questions/FourPicsWord';
 import { Inertia } from '@inertiajs/inertia';
 
-function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mcAnswer, fourPics = [], fourPicsAnswer, num, setRead }) {
+function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mcAnswer, fourPics = [], fourPicsAnswer, num, setRead,lvl }) {
   const [mcIsCorrect, setMcIsCorrect] = useState(false);
   const [fibIsCorrect, setFibIsCorrect] = useState(false);
   const [fourPicsWordIsCorrect, setFourPicsWordIsCorrect] = useState(false);
   const allCorrect = mcIsCorrect && fibIsCorrect && fourPicsWordIsCorrect;
 
+  console.log(lvl)
   const handleLevelUp = (num) => {
     Inertia.post('/levelup', { "chapter": num });
   };
+
+  
 
   const handleMcCorrect = (newCorrectValue) => {
     setMcIsCorrect(newCorrectValue);
@@ -61,7 +64,8 @@ function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mc
           <div className="text-center p-6 bg-opacity-80 bg-black text-white rounded-xl shadow-2xl w-3/4 max-w-lg">
             <h1 className="text-4xl mb-6">Lahat ng sagot ay tama!</h1>
 
-            <a
+            
+             { lvl>=46 ? window.location.href = '/congrats':(<a
               href={`/chapter/${parseInt(num) + 1}`}
               className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md"
               onClick={(e) => {
@@ -69,9 +73,8 @@ function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mc
                 handleLevelUp(num); // Execute the level-up function
                 window.location.href = `/chapter/${parseInt(num) + 1}`; // Manually navigate to the next chapter
               }}
-            >
-              Pumunta sa Kabanata {parseInt(num) + 1}
-            </a>
+            >Pumunta sa Kabanata {parseInt(num) + 1}</a>) }
+            
           </div>
         ) : (
           <div className="">

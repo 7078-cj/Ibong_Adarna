@@ -19,10 +19,21 @@ class ChapterController extends Controller
         $num = $request->num;
 
         $user = auth()->guard('web')->user();
+        $lvlData = $user->levelData->user_level;
 
         $viewName = "Chapters/Chapter{$num}";
 
-        return inertia($viewName,['user'=>$user,'num'=>$num ]);
+        return inertia($viewName,['user'=>$user,'num'=>$num,'lvlData'=>$lvlData ]);
+
+    }
+    public function showCongrats(Request $request){
+       
+
+        $user = auth()->guard('web')->user();
+
+       
+
+        return inertia("Congratulation",['user'=>$user ]);
 
     }
 
@@ -41,7 +52,7 @@ class ChapterController extends Controller
 
         else if($chapter >=46){
 
-            return inertia('Congratulation');
+           return redirect('/congrats');
 
         }
           

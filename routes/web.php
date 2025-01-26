@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function (){
     });
 
     Route::get('/chapter/{num}', [ChapterController::class, 'showChapter']);
+    Route::get('/congrats', [ChapterController::class, 'showCongrats']);
     
     Route::get('/profile', function () {
         $user = auth()->guard('web')->user();
