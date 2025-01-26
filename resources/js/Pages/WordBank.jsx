@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from '../components/Navbar';
 import backgroundImage from "../assets/backgroundImage.gif";
 
@@ -1679,6 +1679,11 @@ function WordBank({ user }) {
       setCurrentCardIndex(nextIndex);
     }, 300);
   };
+
+  useEffect(()=>{
+    const nextIndex = Math.floor(Math.random() * words.length);
+    setCurrentCardIndex(nextIndex);
+  },[])
 
   const card = words[currentCardIndex];
 
