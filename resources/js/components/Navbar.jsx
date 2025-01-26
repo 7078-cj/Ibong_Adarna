@@ -51,7 +51,7 @@ function Navbar({user}) {
         </button>
 
         {/* Logo and Title */}
-        <h1 className="ml-4 text-2xl font-bold">Welcome {user.name}</h1>
+        <h1 className="ml-4 text-2xl font-bold">Pagbati, {user.name}! 🐣</h1>
       </div>
 
       <div className="flex space-x-8">

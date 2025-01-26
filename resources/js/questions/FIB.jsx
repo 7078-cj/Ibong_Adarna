@@ -34,7 +34,7 @@ function FIB({ question, answer, onCorrect }) {
 
       <button
         onClick={handleSubmit}
-        className="bg-teal-600 text-white py-3 px-6 rounded-md cursor-pointer text-base font-sans transition-all duration-200 ease-in-out hover:bg-teal-500 active:bg-yellow-400 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-500"
+        className="bg-teal-600 text-white py-3 px-6 rounded-md cursor-pointer text-base font-sans transition-all duration-200 ease-in-out hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
       >
         Submit
       </button>
