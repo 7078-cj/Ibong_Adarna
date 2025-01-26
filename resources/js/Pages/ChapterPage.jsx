@@ -20,6 +20,7 @@ function ChapterPage({ user, lvlData }) {
         setCurrentPage(page);
     };
 
+    
     return (
         <>
             <NavBar user={user} />
@@ -34,7 +35,7 @@ function ChapterPage({ user, lvlData }) {
                             <a href={`/chapter/${chapterNumber}`}>
                                 <button
                                     className={`w-40 h-16 text-lg font-semibold ${
-                                        index === paginatedChapters.length - 1 
+                                        chapterNumber >= lvlData
                                             ? 'text-amber-100 bg-amber-700 bg-opacity-90 hover:bg-amber-500 hover:bg-opacity-100' 
                                             : 'text-gray-400 bg-amber-900'
                                     } rounded-lg shadow-lg`}
