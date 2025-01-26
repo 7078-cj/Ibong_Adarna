@@ -35,13 +35,13 @@ function ChapterPage({ user, lvlData }) {
                                 <button
                                     className={`w-40 h-16 text-lg font-semibold ${
                                         index === paginatedChapters.length - 1 
-                                            ? 'text-amber-100 bg-amber-800 bg-opacity-90 hover:bg-amber-700 hover:bg-opacity-100' 
-                                            : 'text-gray-400 bg-gray-300 cursor-not-allowed'
+                                            ? 'text-amber-100 bg-amber-700 bg-opacity-90 hover:bg-amber-500 hover:bg-opacity-100' 
+                                            : 'text-gray-400 bg-amber-900'
                                     } rounded-lg shadow-lg`}
                                     style={{
                                         transition: 'background-color 0.3s, transform 0.3s',
                                     }}
-                                    disabled={index !== paginatedChapters.length - 1} // Disable if it's not the last item
+                                    
                                 >
                                     {`Chapter ${chapterNumber}`}
                                 </button>
