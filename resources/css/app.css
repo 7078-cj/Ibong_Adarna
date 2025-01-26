@@ -49,3 +49,67 @@
       transform: rotateY(180deg);
     }
   }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling of the body */
+  }
+  
+  .credit-container {
+    position: relative;
+    height: 100vh;
+    background: black; /* Background color */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .crawl {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffcc00; /* Text color */
+    font-family: 'Arial', sans-serif; /* Font style */
+    animation: crawl 10s linear forwards; /* Animation for scrolling effect */
+  }
+  
+  .crawl-title {
+    font-size: 2.5rem; /* Title size */
+    margin: 20px 0; /* Title margin */
+  }
+  
+  .crawl-content {
+    font-size: 1.5rem; /* Content size */
+    line-height: 1.5; /* Line height */
+  }
+  
+  /* Animation keyframes */
+  @keyframes crawl {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  /* Star background */
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://your-star-background-url.png') repeat; /* Replace with a starry background */
+    z-index: -1; /* Place stars behind the text */
+    animation: star-field 20s linear infinite; /* Animation for stars */
+  }
+  
+  @keyframes star-field {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
