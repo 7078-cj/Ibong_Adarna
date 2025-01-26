@@ -40,7 +40,7 @@ function ProfilePage({user}) {
         <div className="text-center text-white mb-6">
           <h2 className="text-2xl font-extrabold">{user.name}</h2>
           <div className="mt-2 bg-indigo-500 text-white py-1 px-3 rounded-xl inline-block shadow-md">
-          <h3 className="text-lg font-semibold">Current Rank: #1</h3>
+          
         </div>
         </div>
 

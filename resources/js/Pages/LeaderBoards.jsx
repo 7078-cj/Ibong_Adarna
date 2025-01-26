@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from '../components/Navbar'
 import backgroundImage from '../assets/leaderboardBG.gif'
 // import { FaCrown } from 'react-icons/fa';
 function LeaderBoards({allUser,user}) {
 
-  
+  const [users,setUsers] = useState(allUser)
 
+  console.log(users)
+  
+  useEffect(()=>{
+    const sortedUsers = [...users].sort((a, b) => b.level_data.user_level-a.level_data.user_level);
+    setUsers(sortedUsers);
+  },[])
+  
+  
   
   return (
     
@@ -18,7 +26,7 @@ function LeaderBoards({allUser,user}) {
         <h1 className="text-6xl font-extrabold text-center text-white mb-12 bg-gradient-to-r 0 p-4 bg-teal-800 rounded-3xl shadow-xl">Leaderboard</h1>
         <div className="overflow-x-auto bg-transparent mx-auto" style={{ width: '50%' }}>
           <div className="flex flex-col space-y-4">
-            {allUser.map((player) => (
+            {users.map((player) => (
               <div
                 
                 className={`flex items-center justify-between bg-teal-800 bg-opacity-80 border-b border-gray-300 rounded-lg p-4 shadow-2xl `}
@@ -43,8 +51,9 @@ function LeaderBoards({allUser,user}) {
                   </div>
   
                   {/* Name (centered) */}
-                  <div className="flex-grow text-center">
+                  <div className="flex-grow text-center flex flex-row gap-10 justify-between">
                     <span className="text-xl text-white">{player.name}</span>
+                    <span className="text-xl text-white">{player.level_data.user_level}/46</span>
                   </div>
   
                   {/* Score */}

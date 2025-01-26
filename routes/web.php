@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function (){
 
     Route::get('/leaderboard', function () {
         $user = auth()->guard('web')->user();
-        $allUser = User::all();
+        $allUser = User::with('levelData')->get();
 
         return inertia('LeaderBoards',['user'=>$user,'allUser'=>$allUser]);
     });
