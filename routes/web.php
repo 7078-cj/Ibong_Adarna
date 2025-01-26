@@ -44,6 +44,9 @@ Route::middleware('auth')->group(function (){
     
     Route::get('/profile', function () {
         $user = auth()->guard('web')->user();
+        if ($user) {
+            $user->load('levelData');
+        }
 
         return inertia('ProfilePage',['user'=>$user]);
     });

@@ -29,7 +29,7 @@ function LeaderBoards({allUser,user}) {
             {users.map((player) => (
               <div
                 
-                className={`flex items-center justify-between bg-teal-800 bg-opacity-80 border-b border-gray-300 rounded-lg p-4 shadow-2xl `}
+                className={`flex items-center justify-between ${user.name==player.name ? "bg-teal-400":"bg-teal-800"} bg-opacity-80 border-b border-gray-300 rounded-lg p-4 shadow-2xl `}
               >
                 {/* Avatar (left side) */}
                 {/* <div className="w-16 h-16 flex-shrink-0">
@@ -53,7 +53,7 @@ function LeaderBoards({allUser,user}) {
                   {/* Name (centered) */}
                   <div className="flex-grow text-center flex flex-row gap-10 justify-between">
                     <span className="text-xl text-white">{player.name}</span>
-                    <span className="text-xl text-white">{player.level_data.user_level}/46</span>
+                    <span className="text-xl text-white">{player.level_data.user_level}</span>
                   </div>
   
                   {/* Score */}

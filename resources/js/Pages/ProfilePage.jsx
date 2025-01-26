@@ -22,6 +22,8 @@ function ProfilePage({user}) {
                 setFormattedDate(formattedString);
             }, []);
 
+            console.log(user)
+
   return (
     <>
     <Navbar user={user}/>
@@ -40,7 +42,7 @@ function ProfilePage({user}) {
         <div className="text-center text-white mb-6">
           <h2 className="text-2xl font-extrabold">{user.name}</h2>
           <div className="mt-2 bg-indigo-500 text-white py-1 px-3 rounded-xl inline-block shadow-md">
-          
+          Chapters:{user.level_data.user_level}/46
         </div>
         </div>
 
