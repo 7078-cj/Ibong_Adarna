@@ -11,7 +11,7 @@ function Chapter({user, fibQestion, fibAnswer ,mcQuestion ,mcChoices ,mcAnswer ,
       useEffect(() => {
           const audio = audioRef.current;
           if (audio) {
-          audio.volume = 0.5; // Set volume to 30%
+          audio.volume = 0.1; // Set volume to 30%
           }
       }, []);
 
