@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import backgroundMusic from '../assets/congratsBGM.mp3';
 
 function Congratulation() {
+  const audioRef = useRef(null);
+    
+        useEffect(() => {
+            const audio = audioRef.current;
+            if (audio) {
+            audio.volume = 0.1; // Set volume to 30%
+            }
+        }, []);
   return (
     <div className="credit-container">
       <div className="crawl">
@@ -62,6 +71,10 @@ function Congratulation() {
         </div>
       </div>
       <div className="stars"></div>
+      <audio autoPlay loop className='hidden' ref={audioRef}>
+                    <source src={backgroundMusic} type="audio/mp3" />
+                    Your browser does not support the audio element.
+                </audio>
     </div>
   );
 }
