@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavBar from '../components/Navbar';
 import backgroundImage from "../assets/wordbankBg.gif";
+import backgroundMusic from '../assets/wor.mp3';
 
 function WordBank({ user }) {
   const words = [
@@ -1702,6 +1703,15 @@ function WordBank({ user }) {
     setCurrentCardIndexes(initialIndexes);
   }, []);
 
+  const audioRef = useRef(null);
+      
+          useEffect(() => {
+              const audio = audioRef.current;
+              if (audio) {
+              audio.volume = 0.5; // Set volume to 30%
+              }
+          }, []);
+
   return (
     <>
       <NavBar user={user} />
@@ -1778,6 +1788,10 @@ function WordBank({ user }) {
             </button>
           </div>
         </div>
+        <audio autoPlay loop className='hidden' ref={audioRef}>
+                    <source src={backgroundMusic} type="audio/mp3" />
+                    Your browser does not support the audio element.
+                </audio>
       </div>
     </>
   );   

@@ -39,7 +39,7 @@ class UserController extends Controller
             auth()->guard('web')->login($user);
 
            
-            return redirect()->route('home')->with('success', 'Registration successful!');
+            return redirect('/')->with('success', 'Registration successful!');
         } catch (\Exception $e) {
            
             return redirect()->back()->withErrors(['registration' => 'Registration failed: ' . $e->getMessage()])->withInput();

@@ -89,10 +89,13 @@ function LevelPage({ user, fibQestion, fibAnswer, mcQuestion, mcChoices = [], mc
             className="bg-teal-700 hover:bg-teal-500 text-white py-2 px-4 rounded-md shadow-lg flex items-center space-x-2 transition-all"
           >
             {/* Left Arrow Symbol */}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6">
+            <div onClick={()=>{setRead(false)}} className='flex flex-row'>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
             </svg>
-            <span onClick={()=>{setRead(false)}}>Basahin muli ang buod</span>
+            <span >Basahin muli ang buod</span>
+            </div>
+            
           </button>
         </div>
       </div>
