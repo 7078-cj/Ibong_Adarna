@@ -4,12 +4,13 @@ import backgroundMusic from '../assets/congratsBGM.mp3';
 function Congratulation() {
   const audioRef = useRef(null);
     
-        useEffect(() => {
+  useEffect(() => {
             const audio = audioRef.current;
             if (audio) {
             audio.volume = 0.1; // Set volume to 30%
             }
         }, []);
+
   return (
     <div className="credit-container">
       <div className="crawl">
@@ -68,13 +69,14 @@ function Congratulation() {
               Bumalik sa Home
             </button>
           </a>
-        </div>
-      </div>
-      <div className="stars"></div>
-      <audio autoPlay loop className='hidden' ref={audioRef}>
+          <audio autoPlay loop className='hidden' ref={audioRef}>
                     <source src={backgroundMusic} type="audio/mp3" />
                     Your browser does not support the audio element.
                 </audio>
+        </div>
+      </div>
+      <div className="stars"></div>
+      
     </div>
   );
 }
