@@ -71,7 +71,7 @@ function WordBank({ user }) {
     },
     {
       word: "Pinaslang",
-      meaning: "Pinatay o inatake ng malupit.",
+      meaning: "Pinatay o kinitil ang buhay.",
       antonyms: "Ipinanganak, binuhay",
       synonyms: "Pinatay, nilapastangan",
       example: "Ang lider ng bayan ay pinaslang ng mga hindi kilalang tao."
@@ -80,9 +80,9 @@ function WordBank({ user }) {
     // Kabanata 3: Ang Paglalakbay ni Don Pedro
     {
       word: "Matunton",
-      meaning: "Marating",
+      meaning: "Ang proseso o kakayahan sa pagtukoy ng lokasyon o pinagmulan ng isang bagay o tao gamit ang mga pahiwatig, ebidensya, o gabay.",
       antonyms: "Hindi mararating",
-      synonyms: "Mararating, maabot",
+      synonyms: "Mararating, maabot, mahanap",
       example: "Sa wakas, natutunan niyang matunton ang kanyang destinasyon."
     },
     {
@@ -94,7 +94,7 @@ function WordBank({ user }) {
     },
     {
       word: "Dumapo",
-      meaning: "Dumikit",
+      meaning: "Bumaba at tumigil sa isang lugar o bagay mula sa paglipad o paggalaw, katulad ng pagpapahinga ng ibon sa sanga",
       antonyms: "Lumayo, tumakas",
       synonyms: "Tumigil, dumikit",
       example: "Ang ibon ay dumapo sa kanyang balikat."
@@ -108,7 +108,7 @@ function WordBank({ user }) {
     },
     {
       word: "Isang iglap",
-      meaning: "Isang sandali, isang pagkakataon",
+      meaning: "Sa maikling panahon.",
       antonyms: "Matagal, mahaba",
       synonyms: "Paspas, mabilis",
       example: "Isang iglap lang ay natapos ang laban."
@@ -124,30 +124,30 @@ function WordBank({ user }) {
     },
     {
       word: "Nasaksihan",
-      meaning: "Nakita",
+      meaning: "Nakita ang isang pangyayari.",
       antonyms: "Hindi nakita",
       synonyms: "Nakita, nasilayan",
       example: "Nasaksihan niya ang lahat ng pangyayari sa korte."
     },
     {
       word: "Lamyos",
-      meaning: "Malambing",
+      meaning: "Malambing o malumanay.",
       antonyms: "Malupit, magaspang",
-      synonyms: "Mahal, magaan",
+      synonyms: "Mahal, magaan, malumanay",
       example: "Ang kanyang boses ay may malamyos na tunog."
     },
 
     // Kabanata 5: Ang Paglalakbay ni Don Juan
     {
       word: "Lumubha",
-      meaning: "Lumala",
+      meaning: "Lumala ang kalagayan.",
       antonyms: "Bumuti, gumaling",
       synonyms: "Lumala, tumindi",
       example: "Lumubha ang kanyang kalagayan at kailangan ng agarang tulong."
     },
     {
       word: "Atubili",
-      meaning: "Madali",
+      meaning: "Pagkilos na nagmamadali.",
       antonyms: "Mabagal, matagal",
       synonyms: "Mabilis, hindi magpatumpik-tumpik",
       example: "Atubili niyang tinanggap ang hamon."
@@ -163,21 +163,21 @@ function WordBank({ user }) {
       word: "Hangarin",
       meaning: "Nais, gusto",
       antonyms: "Walang layunin",
-      synonyms: "Hangarin, layunin",
+      synonyms: "Hangarin, layunin, pangarap",
       example: "Ang kanyang hangarin ay maging matagumpay sa buhay."
     },
     {
       word: "Usal",
-      meaning: "Sambit",
+      meaning: "Mahinang pagsasalita.",
       antonyms: "Tahimik",
-      synonyms: "Pagbulong, sinabi",
+      synonyms: "Pagbulong, sinabi, sinambit",
       example: "Usal niya ang mga dasal sa kanyang mga labi."
     },
     {
       word: "Leproso",
       meaning: "Taong may sakit sa balat",
       antonyms: "Malusog, walang sakit",
-      synonyms: "May sakit sa balat",
+      synonyms: "Pulubi, ketongin",
       example: "Ang leproso ay pinagmumulan ng takot sa komunidad."
     },
 
@@ -198,7 +198,7 @@ function WordBank({ user }) {
     },
     {
         word: "Ermitanyo",
-        meaning: "Taong nabubuhay mag-isa",
+        meaning: "Taong nabubuhay mag-isa.",
         antonyms: "Sosyal, may kasama",
         synonyms: "Nag-iisa, nag-iisa sa buhay",
         example: "Ang ermitanyo ay tahimik at malayo sa mga tao."
@@ -219,16 +219,16 @@ function WordBank({ user }) {
     },
     {
         word: "Lunas",
-        meaning: "Gamot",
+        meaning: "Kagamutan mula sa isang karandaman.",
         antonyms: "Sakit, karamdaman",
-        synonyms: "Solusyon, kaginhawahan",
+        synonyms: "Solusyon, kaginhawahan, medisina",
         example: "Ang mga halaman sa paligid ay ginagamit bilang lunas sa mga simpleng sakit."
     },
     {
         word: "Nasaksihan",
         meaning: "Nakita",
         antonyms: "Hindi nakita",
-        synonyms: "Naranasan, natanaw",
+        synonyms: "Naranasan, natanaw, natunghayan",
         example: "Nasaksihan ko ang masakit na tanawin ng pagkawasak ng kanilang bahay."
     },
     {
@@ -240,9 +240,9 @@ function WordBank({ user }) {
     },
     {
         word: "Engkantado",
-        meaning: "Kakaibang nilalang",
+        meaning: "Kakaiba o mahiwagang nilalang.",
         antonyms: "Karaniwan, tao",
-        synonyms: "Mistikong nilalang, diwata",
+        synonyms: "Mistikong nilalang, diwata, Mahiwagang nilalang",
         example: "Ang engkantado ay nagtago sa kagubatan mula sa mga tao."
     },
     {
@@ -1716,7 +1716,7 @@ function WordBank({ user }) {
         {/* Container for cards and button */}
         <div className="flex items-center justify-center gap-10">
           {/* Cards Container */}
-          <div className="flex gap-4">
+          <div className="flex gap-8">
             {currentCardIndexes.map((index, i) => {
               const card = words[index];
               return (
@@ -1729,10 +1729,10 @@ function WordBank({ user }) {
                 >
                   {/* Front Side */}
                   <div
-                    className="absolute inset-0 flex flex-col justify-center p-6 text-white border border-gray-300 rounded-lg shadow-lg backface-hidden"
+                    className="absolute inset-0 flex flex-col justify-center p-6 text-white border border-gray-300 rounded-lg shadow-xl backface-hidden"
                     style={{
-                      background: 'linear-gradient(to bottom right, #007b8f, #5a8f94)', // Bluish gradient
-                      boxShadow: '0 8px 16px rgba(75, 74, 74, 0.2)', // 3D effect
+                      background: 'linear-gradient(to bottom right, #007b8f, #5a8f94)', 
+                      boxShadow: '0 8px 16px rgba(75, 74, 74, 0.2)', 
                     }}
                   >
                     <h3 className="mb-4 text-3xl font-extrabold text-center">{card.word}</h3>
@@ -1741,7 +1741,7 @@ function WordBank({ user }) {
   
                   {/* Back Side */}
                   <div
-                    className="absolute inset-0 flex flex-col justify-center p-6 text-white transform border border-gray-300 rounded-lg shadow-lg rotate-y-180 backface-hidden"
+                    className="absolute inset-0 flex flex-col justify-center p-6 text-white transform border border-gray-300 rounded-lg shadow-xl rotate-y-180 backface-hidden"
                     style={{
                       background: 'linear-gradient(to bottom right, #5a8f94, #3b6b71)', // Bluish gradient
                       boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', // 3D effect
