@@ -1706,74 +1706,82 @@ function WordBank({ user }) {
     <>
       <NavBar user={user} />
       <div
-        className="h-screen w-screen bg-cover bg-center bg-no-repeat flex flex-row gap-5 justify-center items-center"
+        className="flex items-center justify-center w-screen h-screen bg-center bg-no-repeat bg-cover"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
           backgroundAttachment: 'fixed',
         }}
       >
-        <div className="grid grid-cols-2 gap-4 mb-5">
-          {currentCardIndexes.map((index, i) => {
-            const card = words[index];
-            return (
-              <div
-                key={index}
-                className={`relative w-80 h-96 cursor-pointer transform-style-preserve-3d transition-transform duration-500 ${
-                  flipped[i] ? 'rotate-y-180' : ''
-                }`}
-                onClick={() => handleFlip(i)}
-              >
-                {/* Front Side */}
+        {/* Container for cards and button */}
+        <div className="flex items-center justify-center gap-10">
+          {/* Cards Container */}
+          <div className="flex gap-4">
+            {currentCardIndexes.map((index, i) => {
+              const card = words[index];
+              return (
                 <div
-                  className="absolute inset-0 text-white border border-gray-300 rounded-lg shadow-lg flex flex-col justify-center p-6 backface-hidden"
-                  style={{
-                    background: 'linear-gradient(to bottom right, #007b8f, #5a8f94)', // Bluish gradient
-                    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', // 3D effect
-                  }}
+                  key={index}
+                  className={`relative w-80 h-96 cursor-pointer transform-style-preserve-3d transition-transform duration-500 ${
+                    flipped[i] ? 'rotate-y-180' : ''
+                  }`}
+                  onClick={() => handleFlip(i)}
                 >
-                  <h3 className="font-extrabold text-3xl mb-4 text-center">{card.word}</h3>
-                  <p className="text-lg mb-4 text-center italic">{card.meaning}</p>
-                </div>
-
-                {/* Back Side */}
-                <div
-                  className="absolute inset-0 text-white border border-gray-300 rounded-lg shadow-lg flex flex-col justify-center p-6 transform rotate-y-180 backface-hidden"
-                  style={{
-                    background: 'linear-gradient(to bottom right, #5a8f94, #3b6b71)', // Bluish gradient
-                    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', // 3D effect
-                  }}
-                >
-                  <h3 className="font-extrabold text-2xl text-center">Gamit sa Pangungusap</h3>
-                  <p className="text-lg text-center italic">"{card.example}"</p>
-
-                  <div className="my-4 border-t border-white opacity-50"></div> {/* Divider */}
-
-                  {/* Synonyms and Antonyms */}
-                  <div className="text-center">
-                    <h4 className="font-semibold text-xl mb-2">Mga Kasingkahulugan</h4>
-                    <p className="text-lg">{card.synonyms}</p>
-
+                  {/* Front Side */}
+                  <div
+                    className="absolute inset-0 flex flex-col justify-center p-6 text-white border border-gray-300 rounded-lg shadow-lg backface-hidden"
+                    style={{
+                      background: 'linear-gradient(to bottom right, #007b8f, #5a8f94)', // Bluish gradient
+                      boxShadow: '0 8px 16px rgba(75, 74, 74, 0.2)', // 3D effect
+                    }}
+                  >
+                    <h3 className="mb-4 text-3xl font-extrabold text-center">{card.word}</h3>
+                    <p className="mb-4 text-lg italic text-center">{card.meaning}</p>
+                  </div>
+  
+                  {/* Back Side */}
+                  <div
+                    className="absolute inset-0 flex flex-col justify-center p-6 text-white transform border border-gray-300 rounded-lg shadow-lg rotate-y-180 backface-hidden"
+                    style={{
+                      background: 'linear-gradient(to bottom right, #5a8f94, #3b6b71)', // Bluish gradient
+                      boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', // 3D effect
+                    }}
+                  >
+                    <h3 className="text-2xl font-extrabold text-center">Gamit sa Pangungusap</h3>
+                    <p className="text-lg italic text-center">"{card.example}"</p>
+  
                     <div className="my-4 border-t border-white opacity-50"></div> {/* Divider */}
-
-                    <h4 className="font-semibold text-xl mb-2">Mga Kasalungat</h4>
-                    <p className="text-lg">{card.antonyms}</p>
+  
+                    {/* Synonyms and Antonyms */}
+                    <div className="text-center">
+                      <h4 className="mb-2 text-xl font-semibold">Mga Kasingkahulugan</h4>
+                      <p className="text-lg">{card.synonyms}</p>
+  
+                      <div className="my-4 border-t border-white opacity-50"></div> {/* Divider */}
+  
+                      <h4 className="mb-2 text-xl font-semibold">Mga Kasalungat</h4>
+                      <p className="text-lg">{card.antonyms}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+  
+          {/* "Susunod" Button */}
+          <div className="flex items-center justify-center">
+            <button
+              className="px-8 py-3 text-white transition-all duration-200 transform bg-teal-700 rounded-lg shadow-lg hover:bg-teal-600 active:bg-teal-500 hover:opacity-100 active:scale-90 active:rotate-180 opacity-90"
+              onClick={handleNextWords}
+            >
+              ↻
+            </button>
+          </div>
         </div>
-
-        <button
-          className="mt-8 px-8 py-3 bg-teal-700 text-white rounded-lg shadow-lg hover:bg-teal-600 active:bg-teal-500 transition-all duration-700 transform hover:opacity-100 active:scale-500 opacity-90"
-          onClick={handleNextWords}
-        >
-          Susunod na Salita
-        </button>
       </div>
     </>
-  );
+  );   
+        
 }
 
 export default WordBank;

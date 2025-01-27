@@ -1,31 +1,69 @@
-import React from 'react'
+import React from 'react';
 
 function Congratulation() {
   return (
     <div className="credit-container">
-    <div className="crawl">
-      <h1 className="crawl-title">Credits</h1>
-      <div className="crawl-content">
-        <p>Directed by: John Doe</p>
-        <p>Produced by: Jane Smith</p>
-        <p>Starring:</p>
-        <p>Actor One</p>
-        <p>Actor Two</p>
-        <p>Actor Three</p>
-        <p>Music by: Composer Name</p>
-        <p>Visual Effects by: VFX Studio</p>
-        <p>And many more...</p>
-        <p>May the Force be with you!</p>
-        <a href="/">
-                            <button className="cursor-pointer uppercase bg-white bg-opacity-5 rounded-lg px-10 py-2 text-slate-300 text-5xl active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition">
-                                home
-                            </button>
-                        </a>
+      <div className="crawl">
+        <h1 className="tracking-wider text-yellow-400 uppercase transform -skew-x-12 crawl-title text-7xl">
+          Maligayang Pagkumpleto!
+          <br/>
+          <br/>
+        </h1>
+        <div className="text-white crawl-content">
+          <h2 className="mt-4 text-4xl font-semibold tracking-wide text-yellow-400 uppercase transform -skew-x-6">
+            Ang Aming Team
+            <br />
+            <br />
+          </h2>
+          <h2 className="text-4xl tracking-wide text-yellow-400 uppercase transform -skew-x-6">
+            BSIS2 Group 1
+            <br />
+            <br />
+          </h2>
+          <h2 className="text-3xl font-semibold tracking-wider text-yellow-400 uppercase transform -skew-x-6">
+            Pinuno:
+          </h2>
+          <p className="text-2xl tracking-wide text-white transform -skew-x-6">
+            Ceejay Santos
+            <br />
+            <br />
+          </p>
+
+          <p className="text-3xl tracking-wide text-yellow-400 uppercase transform -skew-x-6">
+            Mga Miyembro:
+          </p>
+          <p className="text-2xl tracking-wide transform -skew-x-6">Eva Anggana</p>
+          <p className="text-2xl tracking-wide transform -skew-x-6">Margarette Calumpiano</p>
+          <p className="text-2xl tracking-wide transform -skew-x-6">Bianca Erquilang</p>
+          <p className="text-2xl tracking-wide transform -skew-x-6">Aljon Fernandez</p>
+          <p className="text-2xl tracking-wide transform -skew-x-6">
+            Amber Rosana
+            <br />
+            <br />
+          </p>
+
+          <p className="text-2xl tracking-wide text-white transform -skew-x-6">
+            Special Thanks to: Christian Tomas
+            <br />
+            <br />
+          </p>
+          <p className="text-2xl tracking-wide transform -skew-x-6">
+            Maraming Salamat at Nawa'y Nag-enjoy Kayo!
+            <br />
+            <br />
+            <br />
+          </p>
+
+          <a href="/">
+            <button className="px-10 py-2 text-3xl tracking-widest text-yellow-500 uppercase transition-all duration-300 transform -skew-x-6 bg-transparent border-2 border-yellow-500 rounded-lg cursor-pointer active:scale-95 hover:bg-yellow-500 hover:text-black">
+              Bumalik sa Home
+            </button>
+          </a>
+        </div>
       </div>
+      <div className="stars"></div>
     </div>
-    <div className="stars"></div>
-  </div>
-  )
+  );
 }
 
-export default Congratulation
+export default Congratulation;

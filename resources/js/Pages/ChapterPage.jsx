@@ -25,7 +25,7 @@ function ChapterPage({ user, lvlData }) {
         <>
             <NavBar user={user} />
             <div
-                className="bg-cover bg-center bg-no-repeat h-screen font-pixelify-sans font-bold flex flex-col justify-center items-center gap-10"
+                className="flex flex-col items-center justify-center h-screen gap-10 font-bold bg-center bg-no-repeat bg-cover font-pixelify-sans"
                 style={{ backgroundImage: `url(${backgroundImage})` }}
             >
                 {/* Chapter Buttons Container */}
@@ -54,7 +54,7 @@ function ChapterPage({ user, lvlData }) {
                 {/* Pagination Controls */}
                 <div className="flex items-center gap-6">
                     <button
-                        className="px-6 py-3 font-medium text-amber-100 bg-gray-800 bg-opacity-90 rounded-md shadow-md hover:bg-gray-700 hover:bg-opacity-100 disabled:bg-gray-600 disabled:opacity-50"
+                        className="px-6 py-3 font-medium bg-gray-800 rounded-md shadow-md text-amber-100 bg-opacity-90 hover:bg-gray-700 hover:bg-opacity-100 disabled:bg-gray-600 disabled:opacity-50"
                         disabled={currentPage === 1}
                         onClick={() => handlePageChange(currentPage - 1)}
                         style={{
@@ -66,7 +66,7 @@ function ChapterPage({ user, lvlData }) {
                     <span className="text-xl text-amber-100">{`${currentPage} of ${totalPages}`}</span>
                     <span className="text-xl text-amber-100">{`Cleared: ${lvlData-1}/46`}</span>
                     <button
-                        className="px-6 py-3 font-medium text-amber-100 bg-gray-800 bg-opacity-90 rounded-md shadow-md hover:bg-gray-700 hover:bg-opacity-100 disabled:bg-gray-600 disabled:opacity-50"
+                        className="px-6 py-3 font-medium bg-gray-800 rounded-md shadow-md text-amber-100 bg-opacity-90 hover:bg-gray-700 hover:bg-opacity-100 disabled:bg-gray-600 disabled:opacity-50"
                         disabled={currentPage === totalPages}
                         onClick={() => handlePageChange(currentPage + 1)}
                         style={{

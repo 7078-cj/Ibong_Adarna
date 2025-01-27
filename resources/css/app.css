@@ -9,107 +9,106 @@
   font-weight: bold;
 }
 
-/* Style the scrollbar itself */
 ::-webkit-scrollbar {
-  width: 8px; /* Set width of the scrollbar */
-  height: 8px; /* Set height of horizontal scrollbar (if any) */
+  width: 8px;
+  height: 8px;
 }
 
-/* Style the "thumb" (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background-color: #6F4F37; /* Dark brown color */
-  border-radius: 10px; /* Round the corners of the thumb */
-  border: 2px solid #3E2723; /* Border around the thumb */
+  background-color: #6F4F37;
+  border-radius: 10px;
+  border: 2px solid #3E2723;
 }
 
-/* Add hover effect to the thumb */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #3E2723; /* Darker brown when hovered */
+  background-color: #3E2723;
 }
 
-/* Style the scrollbar track (background) */
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Light background color */
-  border-radius: 10px; /* Round corners for the track */
+  background-color: #f1f1f1;
+  border-radius: 10px;
 }
 
-/* Optional: style for horizontal scrollbar */
 ::-webkit-scrollbar-horizontal {
   height: 8px;
 }
 
-  @layer utilities {
-    .transform-style-preserve-3d {
-      transform-style: preserve-3d;
-    }
-    .backface-hidden {
-      backface-visibility: hidden;
-    }
-    .rotate-y-180 {
-      transform: rotateY(180deg);
-    }
+@layer utilities {
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
   }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
 
-  body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevent scrolling of the body */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.credit-container {
+  position: relative;
+  height: 100vh;
+  background: black;
+  background-image: url(https://64.media.tumblr.com/e13c8d189ae079de600c3ca6f4bb167c/tumblr_o9pwzuLkw21swgv2to1_500.gif);
+  background-size: cover;
+  background-position: top;
+  overflow: hidden;
+}
+
+.crawl {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffcc00;
+  font-family: 'Arial', sans-serif;
+  animation: crawl 20s linear forwards;
+}
+
+.crawl-title {
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+
+.crawl-content {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+@keyframes crawl {
+  0% {
+    transform: translateY(100%);
   }
-  
-  .credit-container {
-    position: relative;
-    height: 100vh;
-    background: black; /* Background color */
-    overflow: hidden; /* Hide overflow */
+  70% {
+    transform: translateY(30%);
   }
-  
-  .crawl {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    color: #ffcc00; /* Text color */
-    font-family: 'Arial', sans-serif; /* Font style */
-    animation: crawl 10s linear forwards; /* Animation for scrolling effect */
+  100% {
+    transform: translateY(-10%);
   }
-  
-  .crawl-title {
-    font-size: 2.5rem; /* Title size */
-    margin: 20px 0; /* Title margin */
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://your-star-background-url.png') repeat;
+  z-index: -1;
+  animation: star-field 20s linear infinite;
+}
+
+@keyframes star-field {
+  0% {
+    transform: translateY(0);
   }
-  
-  .crawl-content {
-    font-size: 1.5rem; /* Content size */
-    line-height: 1.5; /* Line height */
+  100% {
+    transform: translateY(-100%);
   }
-  
-  /* Animation keyframes */
-  @keyframes crawl {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
-  }
-  
-  /* Star background */
-  .stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://your-star-background-url.png') repeat; /* Replace with a starry background */
-    z-index: -1; /* Place stars behind the text */
-    animation: star-field 20s linear infinite; /* Animation for stars */
-  }
-  
-  @keyframes star-field {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
-  }
+}

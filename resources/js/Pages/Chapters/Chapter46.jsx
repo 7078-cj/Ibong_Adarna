@@ -11,7 +11,7 @@ function Chapter46({user,num,lvlData}) {
     <div>
          <Chapter
         user={user}
-        fibQestion={"Ipinagtaka ni Don Juan ang mabilis na pagdating nila sa Reyno delos Cristales. Kung ang una niyang paglalakbay ay inabot ng isang buwan ngayon naman ay nakarating sila sa kaharian sa loob ng ________ oras."}
+        fibQestion={"Ipinagtaka ni Don Juan ang mabilis na pagdating nila sa Reyno delos Cristales. Kung ang una niyang paglalakbay ay inabot ng isang buwan ngayon naman ay nakarating sila sa kaharian sa loob ng _____ oras."}
         fibAnswer={"isang"}
         mcQuestion={'Ano ang ibig sabihin ng salitang "yumao"?'}
         mcChoices={['yumaman','umalis','naglakbay', 'namatay']}
